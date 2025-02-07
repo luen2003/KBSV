@@ -1,0 +1,5 @@
+export const BankConfigStatus = {
+    WAITING_APPROVAL_EDIT: "WAITING_APPROVAL_EDIT",
+    COMPLETED: "COMPLETED",
+    REJECT: "REJECT",
+}

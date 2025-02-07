@@ -1,0 +1,677 @@
+{
+  "common": {
+    "yes": "Có",
+    "no": "Không",
+    "update": {
+      "success": "Tạo yêu cầu Sửa thành công!",
+      "fail": "Tạo yêu cầu Sửa thất bại!",
+      "noChangedData": "Không có thông tin thay đổi!"
+    },
+    "create": {
+      "success": "Tạo yêu cầu thêm mới thành công!",
+      "fail": "Tạo yêu cầu thêm mới thất bại!"
+    },
+    "delete": {
+      "success": "Tạo yêu cầu Xóa thành công!",
+      "fail": "Tạo yêu cầu Xóa thất bại!"
+    },
+    "createCreditNote": {
+      "success": "Tạo báo có thành công, chờ người phê duyệt",
+      "fail": "Tạo báo có thất bại"
+    },
+    "cancelCreditNote": {
+      "success": "Hủy báo có thành công, chờ người phê duyệt",
+      "fail": "Hủy báo có thất bại"
+    },
+    "approve": {
+      "success": "Duyệt yêu cầu thành công",
+      "fail": "Duyệt yêu cầu thất bại"
+    },
+    "reject": {
+      "success": "Từ chối yêu cầu thành công",
+      "fail": "Từ chối yêu cầu thất bại"
+    },
+    "search": {
+      "success": "Tra cứu thành công",
+      "fail": "Tra cứu thất bại"
+    },
+    "download": {
+      "success": "Tải xuống thành công",
+      "fail": "Tải xuống thất bại"
+    },
+    "infoFilter": {
+      "contains": "Bao gồm",
+      "notContains": "Không bao gồm",
+      "equals": "Bằng",
+      "notEquals": "Không bằng",
+      "startsWith": "Bắt đầu bằng",
+      "endsWith": "Kết thúc bằng",
+      "greaterThan": "Lớn hơn",
+      "greaterThanOrEquals": "Lớn hơn hoặc bằng",
+      "lessThan": "Nhỏ hơn",
+      "lessThanOrEquals": "Nhỏ hơn hoặc bằng"
+    }
+  },
+  "menu": {
+    "bankConfig": {
+      "index": "Cấu hình ngân hàng",
+      "update": "Chỉnh sửa cấu hình ngân hàng",
+      "create": "Tạo cấu hình ngân hàng",
+      "detail": "Chi tiết cấu hình ngân hàng"
+    },
+    "managePaymentId": {
+      "managePaymentIdTab": "Quản lý số tiền định danh chi liên ngân hàng",
+      "index": "Số tiền định danh chi liên ngân hàng",
+      "create": "Thêm mới số tiền định danh chi liên ngân hàng",
+      "detail": "Chi tiết số tiền định danh chi liên ngân hàng",
+      "delete": "Xóa số tiền định danh chi liên ngân hàng"
+    },
+    "intTransferAccount": {
+      "create": "Thêm mới tài khoản được chi nội bộ",
+      "detail": "Chi tiết tài khoản được chi nội bộ",
+      "delete": "Xóa tài khoản được chi nội bộ",
+      "approve": "Phê duyệt tài khoản được chi nội bộ"
+    },
+    "monitor": {
+      "actionLog": "Activity Logs",
+      "depositConsumer": "Consumer thu hộ",
+      "transferLog": "Log giao dịch"
+    },
+    "errorAccountingTransfer": {
+      "index": "Quản lý các giao dịch thu hộ bị lỗi hạch toán",
+      "detail": "Chi tiết báo có giao dịch thu hộ bị lỗi hạch toán",
+      "createCreditNote": "Nhận báo có giao dịch thu hộ bị lỗi hạch toán",
+      "cancelCreditNote": "Hủy báo có giao dịch thu hộ bị lỗi hạch toán"
+    },
+    "requestOrder": {
+      "list": "Quản lý yêu cầu",
+      "update": "Chỉnh sửa yêu cầu",
+      "create": "Tạo mới yêu cầu",
+      "detail": "Chi tiết yêu cầu"
+    },
+    "citadAccount": {
+      "index": "Tài khoản luôn đi CITAD",
+      "create": "Thêm mới tài khoản luôn đi Citad",
+      "detail": "Chi tiết tài khoản luôn đi Citad",
+      "delete": "Xóa tài khoản luôn đi Citad"
+    },
+    "accountBlacklist": {
+      "index": "Quản lý tài khoản blacklist",
+      "detail": "Chi tiết tài khoản blacklist",
+      "create": "Thêm mới tài khoản blacklist",
+      "update": "Chỉnh sửa tài khoản blacklist",
+      "delete": "Xóa tài khoản blacklist"
+    },
+    "uncompletedWithdraw": {
+      "index": "Giao dịch chi hộ chưa hoàn tất",
+      "update": "Chi tiết giao dịch chi hộ chưa hoàn tất",
+      "detail": "Chi tiết giao dịch chi hộ chưa hoàn tất",
+      "delete": "Xóa giao dịch chi hộ chưa hoàn tất"
+    },
+    "transferDeposit": {
+      "detail": "Xem chi tiết thu hộ"
+    },
+    "withdrawTransfer": {
+      "index": "Danh sách giao dịch chi hộ",
+      "detail": "Xem chi tiết chi hộ",
+      "refusedDetail": "Chi tiết giao dịch chi hộ bị ngân hàng từ chối, chưa cập nhật trên Flex"
+    }
+  },
+  "button": {
+    "save": "Lưu",
+    "close": "Đóng",
+    "update": "Cập nhật",
+    "cancel": "Hủy bỏ",
+    "delete": "Xóa",
+    "confirm": "Xác nhận",
+    "createCreditNote": "Nhận báo có",
+    "cancelCreditNote": "Hủy báo có",
+    "approve": "Duyệt",
+    "reject": "Từ chối",
+    "create": "Thêm mới",
+    "done": "Xong",
+    "search": "Tra cứu"
+  },
+  "login": {
+    "userNamePlaceHoder": "Nhập username",
+    "passwordPlaceHoder": "Nhập password",
+    "login": "Login",
+    "loginSuccess": "Đăng nhập thành công",
+    "loginFailed": "Đăng nhập thất bại, vui lòng đăng nhập lại",
+    "validateCurrentUsername": "Tên đăng nhập không thể để trống.",
+    "validateCurrentPassword": "Mật khẩu không thể để trống."
+  },
+  "bank": {
+    "name": "Tên ngân hàng",
+    "bankNo": "Mã ngân hàng",
+    "shortName": "Tên viết tắt",
+    "isSupportTransfer": "Ngân hàng TCDT",
+    "isSupportTransferValue": {
+      "no": "Không",
+      "yes": "Có"
+    },
+    "bankCode": "Mã KB Money",
+    "codeShortName": "Tên ngân hàng",
+    "noCodeShortName": "Mã ngân hàng",
+    "isNapasTransfer": "Chi hộ Napas",
+    "isCitadTransfer": "Chi hộ Citad",
+    "active": "Tình trạng DV CH",
+    "withdrawAccountNumber": "Tài khoản chuyên chi",
+    "depositAccountNumber": "Tài khoản chuyên thu",
+    "description": "Diễn giải",
+    "createdAt": "Ngày tạo",
+    "action": "Thao tác",
+    "heath": {
+      "active": "Hoạt động",
+      "inactive": "Không hoạt động"
+    },
+    "status": "Trạng thái",
+    "maxNapas": "Hạn mức đi Napas",
+    "approveStatus": {
+      "waitingApprovalDelete": "Chờ duyệt",
+      "waitingApprovalEdit": "Chờ duyệt sửa",
+      "rejected": "Từ chối",
+      "completed": "Hoàn tất"
+    },
+    "transferWay": "Kênh chi hộ LNH sd",
+    "transferChannel": {
+      "none": "None",
+      "all": "Tất cả",
+      "citad": "Citad",
+      "napas": "Napas"
+    }
+  },
+  "transfer": {
+    "deposit": "Thu hộ",
+    "withdraw": "Chi hộ",
+    "action": "",
+    "txDate": "Ngày giao dịch",
+    "txNumber": "Số chứng từ",
+    "txDesc": "Diễn giải",
+    "transferDate": "Ngày giao dịch",
+    "flexTransferId": "Số giao dịch",
+    "transferCode": "Số chứng từ NH",
+    "requestId": "Số chứng từ NH",
+    "accountNumber": "Số TK lưu ký",
+    "customerId": "Số tiểu khoản",
+    "beneficiaryName": "Họ và tên",
+    "beneficiaryBank": "Tên ngân hàng",
+    "beneficiaryBankCode": "Mã ngân hàng",
+    "beneficiaryBankBranch": "Chi nhánh",
+    "amount": "Số tiền",
+    "transferAmount": "Số tiền chuyển",
+    "createdAt": "Thời gian phát sinh",
+    "updatedAt": "Thời gian cập nhật",
+    "description": "Diễn giải",
+    "errorCode": "Mã lỗi",
+    "errorMessage": "Lý do",
+    "status": "Trạng thái",
+    "bankCode": "Mã ngân hàng",
+    "bankCodeDeposit": "Mã ngân hàng thu",
+    "afAccountNumber": "Số tiểu khoản",
+    "refNo": "RefNo/Batch ID",
+    "transferStatus": {
+      "success": "Thành công",
+      "fail": "Thất bại",
+      "waiting": "Chờ xử lý",
+      "title": "Trạng thái",
+      "SUCCESS": "Thành công",
+      "REJECT_TRANSFER_REQUEST": "Chờ xử lý",
+      "WAITING_FOR_UPDATE_REJECT_TRANSFER": "Chờ duyệt cập nhật",
+      "WAITING_FOR_DELETE_REJECT_TRANSFER": "Chờ duyệt xóa"
+    },
+    "beneficiaryAccountNumber": "Số tài khoản thụ hưởng",
+    "feeType": "Loại phí",
+    "feeTypeValue": {
+      "0": "Phí trong",
+      "1": "Phí ngoài"
+    },
+    "fee": "Số phí",
+    "customerName": "Tên khách hàng",
+    "batchId": "Batch ID",
+    "bankTime": "Bank Time",
+    "bankErrorCode": "Mã lỗi",
+    "bankErrorDes": "Diễn giải lỗi",
+    "flexConfirm": "Flex Confirm",
+    "nodeName": "Node Name",
+    "bankRes": "Bank Response",
+    "bankReq": "Bank Request",
+    "commitRes": "Commit Response",
+    "auditStatus": "Audit Status",
+    "auditDesc": "Audit Description",
+    "title": {
+      "error": "Chi tiết lỗi",
+      "detail": "Chi tiết giao dịch",
+      "list": "Danh sách giao dịch"
+    }
+  },
+  "citadAccount": {
+    "title": "Chi tiết tài khoản luôn đi Citad",
+    "status": "Trạng thái",
+    "customerName": "Tên khách hàng",
+    "accountNumber": "Số tài khoản",
+    "afAccountNumber": "Số tiểu khoản",
+    "fullAfAccountNumber": "Số tiểu khoản",
+    "description": "Diễn giải",
+    "approveStatus": {
+      "waitingApprovalDelete": "Chờ duyệt xóa",
+      "waitingApprovalCreate": "Chờ duyệt thêm mới",
+      "rejected": "Từ chối",
+      "completed": "Hoàn tất",
+      "deleted": "Đã xóa"
+    },
+    "action": "",
+    "titleConfirmDelete": "Xoá tài khoản luôn đi Citad",
+    "descriptionConfirmDelete": "Bạn có chắc chắn muốn xóa tài khoản luôn đi Citad này không?",
+    "inputData": {
+      "bankCode": "Chọn ngân hàng",
+      "accountNumber": "Nhập số tài khoản",
+      "customerName": "Tên khách hàng",
+      "afAccountNumber": "Chọn tiểu khoản",
+      "fullAfAccountNumber": "Chọn số tiểu khoản",
+      "description": "Nhập diễn giải"
+    }
+  },
+  "form": {
+    "validate": {
+      "required": "Vui lòng nhập đủ thông tin!",
+      "inRange": "Số phải thuộc khoảng {{min}} đến {{max}}",
+      "lengthMax": "Số lượng ký tự không vượt quá {{len}}"
+    }
+  },
+  "managePaymentIdContent": {
+    "minValue": "Số tiền min",
+    "maxValue": "Số tiền max",
+    "status": {
+      "waitingApprovalCreate": "Chờ duyệt tạo",
+      "waitingApprovalDelete": "Chờ duyệt xóa",
+      "delete": "Xóa",
+      "rejected": "Từ chối"
+    },
+    "toastMessage": {
+      "createSuccess": "Tạo yêu cầu thêm mới thành công!",
+      "deleteSuccess": "Tạo yêu cầu Xóa thành công!",
+      "updateSuccess": "Tạo yêu cầu Sửa thành công!",
+      "deleteFail": "Tạo yêu cầu Xóa thất bại!",
+      "updateFail": "Tạo yêu cầu Sửa thất bại!",
+      "createFail": "Tạo yêu cầu thêm mới thất bại!"
+    },
+    "modal": {
+      "add": "Thêm mới số tiền định danh chi liên ngân hàng",
+      "view": "Chi tiết số tiền định danh chi liên ngân hàng",
+      "edit": "Chỉnh sửa số tiền định danh chi liên ngân hàng",
+      "choseBankCode": "Chọn mã ngân hàng",
+      "inputMinValue": "Nhập số tiền min",
+      "inputMaxValue": "Nhập số tiền max",
+      "inputDes": "Nhập diễn giải",
+      "inputMoney": "Nhập số tiền",
+      "compareMinMax": "Số tiền min phải nhỏ hơn số tiền max!"
+    }
+  },
+  "toastErrorException": {
+    "base": "Có lỗi xảy ra",
+    "forbiddenResource": "Bạn không có quyền thực hiện chức năng này",
+    "admin": {
+      "100003": "Mã nhóm quyền đã tồn tại!",
+      "400000": "Tham số không hợp lệ.",
+      "999999": "Lỗi máy chủ nội bộ.",
+      "400001": "Ngân hàng đã tồn tại!",
+      "400002": "Số tiền tối thiểu phải lớn hơn hoặc bằng 0!",
+      "400003": "Số tiền tối đa phải lớn hơn hoặc bằng 0!",
+      "400004": "Số tiền tối đa phải lớn hơn số tiền tối thiểu!",
+      "400005": "Khoảng giá trị được nhập bị trùng với các khoảng đã tồn tại trên hệ thống!",
+      "400006": "Tính năng không được hỗ trợ!",
+      "400007": "Tài khoản Citad đã tồn tại.",
+      "400008": "Ngân hàng không hỗ trợ Citad và Napas.",
+      "400009": "Ngân hàng không có dịch vụ KBMoney.",
+      "4000010": "Có lỗi xảy ra khi truy vấn số dư tài khoản tổng!",
+      "4000011": "Mã ngân hàng không được hỗ trợ!",
+      "4000012": "Trạng thái ngân hàng không hoạt động!",
+      "4000013": "Số tài khoản không hợp lệ!",
+      "4000014": "Không tìm thấy tài khoản trong danh sách đen!",
+      "4000015": "Trạng thái tài khoản trong danh sách đen không hợp lệ!",
+      "4000016": "Không tìm thấy tài khoản chuyển khoản nội bộ!",
+      "4000017": "Trạng thái tài khoản chuyển khoản nội bộ không hợp lệ!",
+      "4000018": "Số tiểu khoản-Số tài khoản ngân hàng của khách hàng đã tồn tại trong blacklist!",
+      "4000019": "Không thể thêm bản ghi mới với ngân hàng này!",
+      "4000020": "Ghi chú tín dụng đang được xử lý!",
+      "4000021": "Không tìm thấy giao dịch chuyển!",
+      "4000022": "Không thể thêm bản ghi với ngân hàng này!",
+      "4000023": "Bạn phải nhập lý do khi từ chối yêu cầu!",
+      "4000024": "Trạng thái chuyển tiền không hợp lệ!",
+      "4000025": "Giao dịch chi hộ chưa hoàn tất đang được xử lý, vui lòng đợi người phê duyệt hoàn tất.",
+      "4000026": "Trạng thái yêu cầu không hợp lệ!",
+      "404000": "Không tìm thấy ngân hàng.",
+      "404001": "Không tìm thấy cấu hình ngân hàng!",
+      "404002": "Không tìm thấy cấu hình ngân hàng tạm thời!",
+      "404003": "Trạng thái cấu hình ngân hàng không hợp lệ!",
+      "404004": "Trạng thái cấu hình ngân hàng không hợp lệ!",
+      "404005": "Không tìm thấy tài khoản Citad!",
+      "404006": "Không tìm thấy tài khoản Citad tạm thời!",
+      "404007": "Trạng thái tài khoản Citad tạm thời không hợp lệ!",
+      "404008": "Trạng thái tài khoản Citad không hợp lệ!",
+      "404009": "Số tài khoản mẫu sai định dạng!",
+      "404010": "Số tài khoản Af sai định dạng!",
+      "404011": "Không tìm thấy cấu hình số tiền ngân hàng tạm thời!",
+      "404012": "Trạng thái cấu hình số tiền ngân hàng tạm thời không hợp lệ!",
+      "404013": "Không tìm thấy cấu hình số tiền ngân hàng!",
+      "404014": "Không tìm thấy yêu cầu!",
+      "404015": "Trạng thái yêu cầu không hợp lệ!",
+      "404016": "Yêu cầu bị trùng lặp!",
+      "404017": "Không tìm thấy đối soát!",
+      "404018": "Có lỗi xảy ra trong quá trình đối soát!",
+      "404019": "Ngày không hợp lệ!",
+      "404020": "Có lỗi xảy ra khi truy vấn thông tin tài khoản khách hàng!",
+      "404021": "Tài khoản khách hàng không hợp lệ!",
+      "404022": "Đối soát cho ngân hàng này không được hỗ trợ!",
+      "404023": "Loại đối soát không hợp lệ!"
+    }
+  },
+  "intTransferAccount": {
+    "title": " Quản lý tài khoản được chi nội bộ",
+    "action": "Thao tác",
+    "status": "Trạng thái",
+    "bank": "Ngân hàng",
+    "type": {
+      "header": "Tài khoản được chi nội bộ",
+      "form": "Loại",
+      "ALL": "Tất cả",
+      "ACCOUNT": "Theo tài khoản"
+    },
+    "account": "Nhập tài khoản",
+    "approveStatus": {
+      "waitingApprovalDelete": "Chờ duyệt xóa",
+      "waitingApprovalCreate": "Chờ duyệt thêm mới",
+      "rejected": "Từ chối",
+      "completed": "Hoàn tất"
+    },
+    "button": {
+      "create": "Thêm mới"
+    }
+  },
+  "balanceQuery": {
+    "title": "Truy vấn số dư tài khoản tổng",
+    "bankCode": "Mã ngân hàng",
+    "status": "Trạng thái ngân hàng",
+    "bankName": "Tên ngân hàng",
+    "amount": "Số tiền",
+    "lockUp": "Tra cứu",
+    "active": "Hoạt động",
+    "inactive": "Không hoạt động"
+  },
+  "monitor": {
+    "actionLog": {
+      "uuid": "Uuid",
+      "menu": "Menu",
+      "user": "Username",
+      "action": "Action",
+      "url": "Url",
+      "method": "Method",
+      "methodValue": {
+        "get": "GET",
+        "post": "POST",
+        "put": "PUT",
+        "patch": "PATCH",
+        "delete": "DELETE"
+      },
+      "ip": "IP",
+      "createdAt": "Ngày tạo",
+      "timeExecution": "Time Execution (ms)"
+    },
+    "transferLog": {
+      "uuid": "Uuid",
+      "txNum": "txNum",
+      "transferType": "Loại",
+      "bankRequestId": "ID yêu cầu NH",
+      "batchId": "Batch ID",
+      "request": "Request",
+      "response": "Response",
+      "transferId": "ID",
+      "transferStatus": "Trạng thái",
+      "description": "Mô tả",
+      "createdBy": "Người tạo",
+      "createdAt": "Ngày tạo"
+    }
+  },
+  "requestOrder": {
+    "createdBy": "Người thực hiện",
+    "createdAt": "Thời gian tạo",
+    "type": "Loại yêu cầu",
+    "businessName": "Tên nghiệp vụ",
+    "customerName": "Tên khách hàng",
+    "afAccountNumber": "Số tiểu khoản",
+    "action": "Thao tác",
+    "approvedBy": "Người duyệt",
+    "approvedAt": "Thời gian duyệt",
+    "reasonReject": "Lý do từ chối",
+    "status": "Trạng thái",
+    "accountNumber": "Số tài khoản",
+    "transDate": "Ngày giao dịch",
+    "docsDate": "Ngày chứng từ",
+    "description": "Diễn giải",
+    "typeAction": "Loại thao tác",
+    "listActions": {
+      "CREATE": "Thêm mới",
+      "UPDATE": "Sửa",
+      "DELETE": "Xóa"
+    }
+  },
+  "requestOrderStatus": {
+    "completed": "Hoàn tất",
+    "reject": "Từ chối",
+    "waiting": "Chờ duyệt"
+  },
+  "requestOrderAction": {
+    "create": "Thêm mới",
+    "delete": "Xóa",
+    "update": "Cập nhật",
+    "beforeUpdate": "Thông tin trước chỉnh sửa",
+    "afterUpdate": "Thông tin sau chỉnh sửa",
+    "commonInfo": "Thông tin chung",
+    "receive_credit_note": "Nhận báo có",
+    "cancel_credit_note": "Hủy báo có",
+    "refuse_uncompleted_withdraw": "Chờ duyệt xóa",
+    "complete_uncompleted_withdraw": "Chờ duyệt cập nhật",
+    "update_withdraw_reject_by_bank": "Chờ duyệt cập nhật",
+    "delete_withdraw_reject_by_bank": "Xóa khoản chi hộ bị từ chối bởi ngân hàng"
+  },
+  "blacklist": {
+    "action": "Thao tác",
+    "active": "Hoạt đ��ng",
+    "status": "Trạng thái",
+    "beneficiaryAccountNumber": "Số TK thụ hưởng",
+    "beneficiaryAccountName": "Tên KH thụ hưởng",
+    "beneficiaryBankName": "Tên NH thụ hưởng",
+    "beneficiaryBranchName": "Chi nhánh NH thụ hưởng",
+    "accountNumber": "Số TK lưu ký",
+    "afAccountNumber": "Số tiểu khoản",
+    "customerName": "Tên khách hàng",
+    "approveStatus": {
+      "waitingApprovalCreate": "Chờ duyệt thêm mới",
+      "waitingApprovalEdit": "Chờ duyệt sửa",
+      "waitingApprovalDelete": "Chờ duyệt xóa",
+      "completed": "Hoàn tất",
+      "rejected": "Từ chối"
+    },
+    "inputData": {
+      "customerName": "Tên khách hàng",
+      "bankCode": "Chọn ngân hàng",
+      "accountNumber": "Nhập số tài khoản lưu ký",
+      "afAccountNumber": "Chọn số tiểu khoản",
+      "description": "Nhập diễn giải",
+      "beneficiaryAccountNumber": "Chọn số tài khoản thụ hưởng",
+      "beneficiaryAccountName": "Tên tài khoản thụ hưởng",
+      "beneficiaryBankName": "Tên NH thụ hưởng",
+      "beneficiaryBranchName": "Chi nhánh NH thụ hưởng",
+      "accountNumberInvalid": "Số tài khoản không hợp lệ!"
+    }
+  },
+  "accessControl": {
+    "title": "Phân quyền",
+    "view": "Xem",
+    "create": "Thêm",
+    "update": "Sửa",
+    "delete": "Xóa",
+    "approve": "Duyệt",
+    "selectedAll": "Chọn tất cả",
+    "listUser": "Danh sách người dùng",
+    "listUserInGroup": "Danh sách người dùng của nhóm",
+    "assignAccessControlGroup": "Gán vào nhóm",
+    "toastSuccess": "Phân quyền thành công",
+    "toastFailed": "Phân quyền thất bại",
+    "toastAssignGroupSuccess": "Gán nhóm quyền thành công",
+    "toastAssignGroupFailed": "Gán nhóm quyền thất bại"
+  },
+  "requestOrderBusinessName": {
+    "receiveCreditNote": "Nhận báo có",
+    "cancelCreditNote": "Hủy báo có",
+    "createBlacklistAccount": "Thêm mới tài khoản blacklist",
+    "updateBlacklistAccount": "Sửa tài khoản blacklist",
+    "deleteBlacklistAccount": "Xóa tài khoản blacklist",
+    "createInternalTransferAccount": "Thêm mới tài khoản chi nội bộ",
+    "deleteInternalTransferAccount": "Xóa tài khoản chi nội bộ",
+    "editBankConfig": "Sửa cấu hình ngân hàng",
+    "createCitadAccount": "Thêm mới tài khoản luôn citad",
+    "deleteCitadAccount": "Xóa tài khoản luôn citad",
+    "createBankAmountSetting": "Thêm mới số tiền định danh liên ngân hàng",
+    "deleteBankAmountSetting": "Xóa số tiền định danh liên ngân hàng",
+    "completeUncompletedWithdraw": "Hoàn tất khoản chi hộ chưa hoàn tất",
+    "refuseUncompletedWithdraw": "Từ chối khoản chi hộ chưa hoàn tất",
+    "updateWithdrawRejectByBank": "Cập nhật khoản chi hộ bị từ chối bởi ngân hàng",
+    "deleteWithdrawRejectByBank": "Xóa khoản chi hộ bị từ chối bởi ngân hàng"
+  },
+  "role": {
+    "id": "Mã nhóm quyền",
+    "authority": "Mã nhóm quyền",
+    "name": "Tên nhóm quyền",
+    "description": "Mô tả",
+    "status": "Trạng thái",
+    "title": {
+      "delete": "Xóa nhóm quyền",
+      "list": "Phân quyền hệ thống",
+      "create": "Thêm nhóm quyền",
+      "edit": "Chỉnh sửa nhóm quyền",
+      "detail": "Thông tin nhóm quyền"
+    },
+    "button": {
+      "addUser": "Gán vào nhóm",
+      "viewAuthorization": "Xem quyền",
+      "authorization": "Phân quyền",
+      "viewUser": "Xem người dùng",
+      "updateUser": "Gán người dùng",
+      "assignUser": "Gán vào nhóm"
+    },
+    "inputData": {
+      "authority": "Nhập mã nhóm quyền",
+      "name": "Nhập tên nhóm quyền",
+      "description": "Nhập mô tả"
+    }
+  },
+  "roleStatus": {
+    "active": "Hoạt động",
+    "in_active": "Không hoạt động"
+  },
+  "user": {
+    "id": "Mã người dùng",
+    "username": "Tên đăng nhập",
+    "fullName": "Tên đầy đủ",
+    "email": "Email",
+    "phone": "Số điện thoại",
+    "status": "Trạng thái",
+    "enabled": {
+      "title": "Trạng thái",
+      "value": {
+        "active": "Hoạt động",
+        "inActive": "Không hoạt động",
+        "none": "Không xác định"
+      }
+    },
+    "role": "Nhóm quyền",
+    "departmentName": "Bộ phận",
+    "title": {
+      "delete": "Xóa người dùng",
+      "list": "Danh sách người dùng",
+      "create": "Thêm người dùng",
+      "update": "Chỉnh sửa người dùng",
+      "detail": "Thông tin người dùng"
+    },
+    "button": {
+      "viewRole": "Xem nhóm",
+      "updateRole": "Gán vào nhóm"
+    }
+  },
+  "depositConsumer": {
+    "id": "id",
+    "isError": "Lỗi",
+    "type": "Loại",
+    "request": "Request",
+    "response": "Response",
+    "description": "Diễn giải",
+    "createdAt": "Ngày tạo"
+  },
+  "creditNoteStatus": {
+    "waitingApproval": "Chờ duyệt báo có",
+    "waitingDelete": "Chờ duyệt xóa",
+    "completed": "Hoàn tất",
+    "reject": "Từ chối",
+    "none": "Chờ xử lý"
+  },
+  "withdrawStatus": {
+    "pendingTransferRequest": "Chờ xử lý",
+    "waitingForUpdatePendingTransfer": "Chờ duyệt cập nhật",
+    "waitingForDeletePendingTransfer": "Chờ duyệt xóa"
+  },
+  "bankBranch": {
+    "name": "Tên chi nhánh"
+  },
+  "reconciliation": {
+    "action": "",
+    "createdAt": "Thời gian tạo",
+    "receivedAt": "Thời gian nhận",
+    "fileName": "Tên báo cáo",
+    "filterInput": {
+      "bank": "Ngân hàng",
+      "type": {
+        "key": "Loại đối soát",
+        "value": {
+          "date": "Đối soát ngày",
+          "month": "Đối soát tháng"
+        }
+      },
+      "selectDate": "Chọn ngày",
+      "selectMonth": "Chọn tháng"
+    }
+  },
+  "formAssignRole": {
+    "title": "Gán nhóm cho user",
+    "role": "Nhóm quyền",
+    "user": "Người dùng",
+    "button": {
+      "assign": "Gán quyền"
+    },
+    "selectedAll": "Chọn tất cả",
+    "group": "Nhóm",
+    "currentGroup": "Nhóm hiện tại",
+    "searchRole": "Tìm kiếm nhóm",
+    "messageSuccess": {
+      "assignRole": "Gán quyền thành công",
+      "editAccount": "Chỉnh sửa tài khoản thành công"
+    },
+    "messageError": {
+      "assignRole": "Gán quyền thất bại",
+      "editAccount": "Chỉnh sửa tài khoản thành công"
+    }
+  },
+  "uncompletedWithdrawTransfer": {
+    "textUpdate": {
+      "success": "Tạo yêu cầu Cập nhật thành công!",
+      "fail": "Tạo yêu cầu Cập nhật thất bại!"
+    }
+  },
+  "withdrawTransferRefused": {
+    "textUpdate": {
+      "success": "Tạo yêu cầu Cập nhật thành công!",
+      "fail": "Tạo yêu cầu Cập nhật thất bại!"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.defaultInterfaceDropDown__control {
+  @apply !border-gray-009 !border !h-26px !bg-transparent;
+  height: 26px !important;
+  min-height: 26px !important;
+}
+
+.defaultInterfaceDropDown__control:hover {
+  @apply !border-gray-009;
+}
+
+.defaultInterfaceDropDown__value-container {
+  @apply !h-26px;
+  height: 26px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.defaultInterfaceDropDown__input-container {
+  height: 26px !important;
+}
+
+.defaultInterfaceDropDown__indicators {
+  @apply pr-3 !h-26px flex gap-1 !important;
+}
+
+.defaultInterfaceDropDown__single-value {
+  @apply !text-gray-012;
+}
+
+.defaultInterfaceDropDown__input-container {
+  @apply !text-gray-012 !h-26px !m-0 !py-0;
+}
+
+.defaultInterfaceDropDown__indicators-container {
+  @apply !h-26px;
+}
+
+.defaultInterfaceDropDown__indicator-separator {
+  @apply hidden;
+}
+
+.defaultInterfaceDropDown_menu {
+  @apply p-0 !bg-gray-006 !important;
+}
+
+.defaultInterfaceDropDown__option {
+  @apply !bg-transparent;
+}
+
+.defaultInterfaceDropDown__option:hover {
+  @apply !bg-gray-009 !rounded;
+}
+
+.defaultInterfaceDropDown__option--is-selected {
+  @apply !bg-gray-009 !rounded;
+}
+
+.defaultInterfaceDropDown__option--is-focused {
+  @apply !bg-gray-009 !rounded;
+}
