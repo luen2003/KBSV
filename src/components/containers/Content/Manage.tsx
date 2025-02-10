@@ -21,6 +21,7 @@ import GridTable from "@components/common/Table/Table";
 import EmployeeModal from "./EmployeeModal";
 import SuccessModal from "./SuccessModal";
 import { Badge } from "antd";
+import { FileOutlined } from "@ant-design/icons";
 
 message.config({
   duration: 3,
@@ -274,8 +275,22 @@ const Manage: React.FC = () => {
         >
           {fileList.length > 0 ? (
             <>
-              <Tag color="purple" style={{ marginTop: 10, fontSize: 14 }}>
-                {fileList[0]?.name}
+              <Tag
+                style={{
+                  backgroundColor: "#EBEBEB",
+                  borderRadius: "20px", // Bo tròn góc
+                  padding: "5px 15px", // Canh lề trong
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "8px", // Khoảng cách giữa icon và chữ
+                  cursor: "pointer"
+                }}
+              >
+                {" "}
+                <FileOutlined />
+                <span style={{ marginLeft: 8, color: "#3355A6" }}>
+                  {fileList[0]?.name}
+                </span>{" "}
               </Tag>
             </>
           ) : (

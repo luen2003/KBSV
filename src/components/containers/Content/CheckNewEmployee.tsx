@@ -3,7 +3,8 @@ import { Breadcrumb, Pagination, Select, Modal, Upload, message } from "antd";
 import {
   HomeOutlined,
   UploadOutlined,
-  FilterOutlined
+  FilterOutlined,
+  FileOutlined
 } from "@ant-design/icons";
 import { Button, Form, Input, Row, Col, Tag, Table } from "antd";
 import GridTable from "@components/common/Table/Table"; // Ensure GridTable is properly imported
@@ -701,8 +702,22 @@ const CheckNewEmployee: React.FC = () => {
             >
               {fileList.length > 0 ? (
                 <>
-                  <Tag color="purple" style={{ marginTop: 10, fontSize: 14 }}>
-                    {fileList[0]?.name}
+                  <Tag
+                    style={{
+                      backgroundColor: "#EBEBEB",
+                      borderRadius: "20px", // Bo tròn góc
+                      padding: "5px 15px", // Canh lề trong
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "8px", // Khoảng cách giữa icon và chữ
+                      cursor: "pointer"
+                    }}
+                  >
+                    {" "}
+                    <FileOutlined />
+                    <span style={{ marginLeft: 8, color: "#3355A6" }}>
+                      {fileList[0]?.name}
+                    </span>{" "}
                   </Tag>
                 </>
               ) : (
