@@ -122,10 +122,28 @@ const SuccessModal: React.FC<SuccessModalProps> = ({
         pagination={{ pageSize: 5 }}
       />
       <div style={{ display: "flex", justifyContent: "center", marginTop: 20 }}>
-        <Button onClick={onClose} style={{ marginRight: 10 }}>
+        <Button
+          color="purple"
+          type="primary"
+          onClick={onClose}
+          style={{
+            marginRight: 25,
+            backgroundColor: "#416BD1", // Màu nền tím
+            color: "#ffffff"
+          }}
+        >
           Đóng
         </Button>
-        <Button type="primary" onClick={onClose}>
+        <Button
+          color="purple"
+          type="primary"
+          style={{
+            marginRight: 20,
+            backgroundColor: "#416BD1", // Màu nền tím
+            color: "#ffffff"
+          }}
+          onClick={onClose}
+        >
           Xác nhận
         </Button>
       </div>

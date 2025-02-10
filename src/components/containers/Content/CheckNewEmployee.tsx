@@ -190,7 +190,36 @@ const CheckNewEmployee: React.FC = () => {
   const [tableData, setTableData] = useState<NameType[]>([]);
   const [selectedRecord, setSelectedRecord] = useState<NameType | null>(null);
   const [isPersonalModalVisible, setIsPersonalModalVisible] = useState(false);
+  const [isApprovalModalVisible, setIsApprovalModalVisible] = useState(false);
+  const [isRejectionModalVisible, setIsRejectionModalVisible] = useState(false);
+  const [rejectionReason, setRejectionReason] = useState("");
+  const handleApprove = () => {
+    setIsApprovalModalVisible(true);
+  };
 
+  const handleReject = () => {
+    setIsRejectionModalVisible(true);
+  };
+
+  const handleApprovalConfirm = () => {
+    setIsApprovalModalVisible(false);
+    message.success("Yêu cầu đã được phê duyệt.");
+  };
+
+  const handleRejectionConfirm = () => {
+    if (!rejectionReason) {
+      message.error("Vui lòng nhập lý do từ chối.");
+      return;
+    }
+    setIsRejectionModalVisible(false);
+    message.success("Yêu cầu đã được từ chối.");
+  };
+
+  const handleRejectionReasonChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setRejectionReason(e.target.value);
+  };
   const fetchData = async () => {
     try {
       const data = dataTable; // Giả sử đây là API call trong thực tế
@@ -217,49 +246,85 @@ const CheckNewEmployee: React.FC = () => {
       )
     },
     {
-      title: "Tỷ lệ vi phạm",
+      title: (
+        <>
+          Tỷ lệ vi phạm{" "}
+          <FilterOutlined style={{ marginLeft: 5, cursor: "pointer" }} />
+        </>
+      ),
       dataIndex: "violationRate",
       key: "violationRate"
     },
     {
-      title: "ID",
+      title: (
+        <>
+          ID <FilterOutlined style={{ marginLeft: 5, cursor: "pointer" }} />
+        </>
+      ),
       dataIndex: "id",
       key: "id"
     },
     {
-      title: "Type",
+      title: (
+        <>
+          Type <FilterOutlined style={{ marginLeft: 5, cursor: "pointer" }} />
+        </>
+      ),
       dataIndex: "type",
       key: "type"
     },
     {
-      title: "Status",
+      title: (
+        <>
+          Status <FilterOutlined style={{ marginLeft: 5, cursor: "pointer" }} />
+        </>
+      ),
       dataIndex: "status",
       key: "status",
       render: (status: string) => {
         let statusColor = "gray";
         if (status === "Active") statusColor = "green";
         if (status === "Inactive") statusColor = "red";
-  
+
         return <Badge color={statusColor} text={status} />;
       }
     },
     {
-      title: "Gender",
+      title: (
+        <>
+          Gender <FilterOutlined style={{ marginLeft: 5, cursor: "pointer" }} />
+        </>
+      ),
       dataIndex: "gender",
       key: "gender"
     },
     {
-      title: "Primary Name",
+      title: (
+        <>
+          Primary Name{" "}
+          <FilterOutlined style={{ marginLeft: 5, cursor: "pointer" }} />
+        </>
+      ),
       dataIndex: "primaryName",
       key: "primaryName"
     },
     {
-      title: "Date of birth/ Date of Registration",
+      title: (
+        <>
+          Date of birth/ Date of Registration{" "}
+          <FilterOutlined style={{ marginLeft: 5, cursor: "pointer" }} />
+        </>
+      ),
       dataIndex: "dateOfBirth",
       key: "dateOfBirth"
     },
     {
-      title: "Citizenship/ Country of Registration",
+      title: (
+        <>
+          Citizenship/ Country of Registration{" "}
+          <FilterOutlined style={{ marginLeft: 5, cursor: "pointer" }} />
+        </>
+      ),
       dataIndex: "citizenship",
       key: "citizenship"
     }
@@ -531,14 +596,14 @@ const CheckNewEmployee: React.FC = () => {
               <Button
                 key="reject"
                 style={{ backgroundColor: "#FA2323", color: "white" }}
-                onClick={() => setIsModalDetailVisible(false)}
+                onClick={handleReject}
               >
                 Từ chối
               </Button>,
               <Button
                 key="approve"
                 style={{ backgroundColor: "#027A48", color: "white" }}
-                onClick={() => setIsModalDetailVisible(false)}
+                onClick={handleApprove}
               >
                 Phê duyệt
               </Button>
@@ -681,6 +746,65 @@ const CheckNewEmployee: React.FC = () => {
 
             <div style={{ marginTop: "20px" }}>
               <Annotate />
+            </div>
+          </Modal>
+          {/* Approval Confirmation Modal */}
+          <Modal
+            title="Phê duyệt yêu cầu"
+            visible={isApprovalModalVisible}
+            onCancel={() => setIsApprovalModalVisible(false)}
+            footer={[
+              <Button
+                key="close"
+                style={{ backgroundColor: "#416BD1", color: "white" }}
+                onClick={() => setIsApprovalModalVisible(false)}
+              >
+                Đóng
+              </Button>,
+              <Button
+                key="approve"
+                style={{ backgroundColor: "#027A48", color: "white" }}
+                onClick={handleApprovalConfirm}
+              >
+                Đồng ý
+              </Button>
+            ]}
+          >
+            <p>Bạn có muốn phê duyệt KH này mở tài khoản?</p>
+          </Modal>
+          {/* Rejection Modal */}
+          <Modal
+            title="Từ chối yêu cầu"
+            visible={isRejectionModalVisible}
+            onCancel={() => setIsRejectionModalVisible(false)}
+            footer={[
+              <Button
+                key="close"
+                style={{ backgroundColor: "#416BD1", color: "white" }}
+                onClick={() => setIsRejectionModalVisible(false)}
+              >
+                Đóng
+              </Button>,
+              <Button
+                key="reject"
+                style={{ backgroundColor: "#FA2323", color: "white" }}
+                onClick={handleRejectionConfirm}
+              >
+                Từ chối
+              </Button>
+            ]}
+          >
+            <div style={{ maxWidth: 400, margin: "0 auto", padding: "20px" }}>
+              <Form layout="vertical">
+                <Form.Item label="Lý do từ chối" required>
+                  <Input.TextArea
+                    value={rejectionReason}
+                    onChange={(e) => setRejectionReason(e.target.value)}
+                    placeholder="Nhập lý do từ chối"
+                    rows={2} // Adjust the number of visible rows for the text area
+                  />
+                </Form.Item>
+              </Form>
             </div>
           </Modal>
         </div>

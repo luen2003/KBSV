@@ -19,7 +19,7 @@ import RightSideBar from "../../layout/components/RightSideBar";
 import GridTable from "@components/common/Table/Table";
 import EmployeeModal from "./EmployeeModal";
 import SuccessModal from "./SuccessModal";
-import {Badge} from "antd";
+import { Badge } from "antd";
 message.config({
   duration: 3,
   maxCount: 1
@@ -133,9 +133,8 @@ const Manage: React.FC = () => {
       className: "has-filter",
       renderFilter: ({ column, confirm, ref }: any) => (
         <FilterInput column={column} confirm={confirm} ref={ref} />
-      ),      
+      ),
       render: (text: string) => <Badge color="green" text={text} />
-
     },
     {
       title: "Gender",

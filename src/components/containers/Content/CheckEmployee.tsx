@@ -20,6 +20,7 @@ import CustomerTable from "./CustomTable";
 import OrganizedTable from "./OrganizedTable";
 import Annotate from "./Annotate";
 import { RightSideBar } from "@components/layout/components";
+import { FilterOutlined } from "@ant-design/icons";
 type FormData = {
   name: string;
   cccd: string;
@@ -423,22 +424,39 @@ const CheckEmployee = () => {
       )
     },
     {
-      title: "Tỷ lệ vi phạm",
+      title: (
+        <>
+          Tỷ lệ vi phạm{" "}
+          <FilterOutlined style={{ marginLeft: 5, cursor: "pointer" }} />
+        </>
+      ),
       dataIndex: "violationRate",
       key: "violationRate"
     },
     {
-      title: "ID",
+      title: (
+        <>
+          ID <FilterOutlined style={{ marginLeft: 5, cursor: "pointer" }} />
+        </>
+      ),
       dataIndex: "id",
       key: "id"
     },
     {
-      title: "Type",
+      title: (
+        <>
+          Type <FilterOutlined style={{ marginLeft: 5, cursor: "pointer" }} />
+        </>
+      ),
       dataIndex: "type",
       key: "type"
     },
     {
-      title: "Status",
+      title: (
+        <>
+          Status <FilterOutlined style={{ marginLeft: 5, cursor: "pointer" }} />
+        </>
+      ),
       dataIndex: "status",
       key: "status",
       render: (status: string) => {
@@ -450,22 +468,41 @@ const CheckEmployee = () => {
       }
     },
     {
-      title: "Gender",
+      title: (
+        <>
+          Gender <FilterOutlined style={{ marginLeft: 5, cursor: "pointer" }} />
+        </>
+      ),
       dataIndex: "gender",
       key: "gender"
     },
     {
-      title: "Primary Name",
+      title: (
+        <>
+          Primary Name{" "}
+          <FilterOutlined style={{ marginLeft: 5, cursor: "pointer" }} />
+        </>
+      ),
       dataIndex: "primaryName",
       key: "primaryName"
     },
     {
-      title: "Date of birth/ Date of Registration",
+      title: (
+        <>
+          Date of birth/ Date of Registration{" "}
+          <FilterOutlined style={{ marginLeft: 5, cursor: "pointer" }} />
+        </>
+      ),
       dataIndex: "dateOfBirth",
       key: "dateOfBirth"
     },
     {
-      title: "Citizenship/ Country of Registration",
+      title: (
+        <>
+          Citizenship/ Country of Registration{" "}
+          <FilterOutlined style={{ marginLeft: 5, cursor: "pointer" }} />
+        </>
+      ),
       dataIndex: "citizenship",
       key: "citizenship"
     }

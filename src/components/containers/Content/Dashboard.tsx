@@ -425,6 +425,7 @@ const Dashboard: React.FC = () => {
             footer={[
               <Button
                 type="primary"
+                onClick={() => setIsModalDetailVisible(false)} // Close modal when clicking cancel
                 color="purple"
                 key="close"
                 style={{
