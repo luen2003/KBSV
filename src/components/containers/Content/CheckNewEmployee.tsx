@@ -720,19 +720,22 @@ const CheckNewEmployee: React.FC = () => {
                 {errorMessage}
               </div>
             )}
-            <div className="mt-3 d-flex justify-content-center">
-              <button className="btn btn-primary me-2" onClick={handleReadFile}>
-                Đọc file
-              </button>
-              {fileList.length > 0 && (
-                <button
-                  className="btn btn-secondary"
-                  onClick={() => setFileList([])}
-                >
-                  Tải lại file
-                </button>
-              )}
-            </div>
+            <Button
+              type="primary"
+              onClick={handleReadFile}
+              style={{ marginTop: "10px" }}
+            >
+              Read File
+            </Button>
+            {fileList.length > 0 && (
+              <Button
+                type="primary"
+                onClick={() => setFileList([])}
+                style={{ marginTop: "10px", marginLeft: "5px" }}
+              >
+                Tải lại file
+              </Button>
+            )}
           </Modal>
           <Modal
             title={"Chi tiết nhân viên"}
