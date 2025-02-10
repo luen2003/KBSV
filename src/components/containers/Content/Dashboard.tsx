@@ -57,7 +57,7 @@ const data = [
   },
   {
     key: "4",
-    status: "Active",
+    status: "Inactive",
     nameType: "Spelling Variation",
     titleHonorific: "-",
     firstName: "-",
@@ -118,7 +118,7 @@ const dataTable = {
       descriptions: "-"
     },
     {
-      status: "Active",
+      status: "Inactive",
       nameType: "Spelling Variation",
       titleHonorific: "-",
       firstName: "-",
@@ -204,7 +204,13 @@ const Dashboard: React.FC = () => {
       renderFilter: ({ column, confirm, ref }: any) => (
         <FilterInput column={column} confirm={confirm} ref={ref} />
       ),
-      render: (text: string) => <Badge color="green" text={text} />
+      render: (status: string) => {
+        let statusColor = "gray";
+        if (status === "Active") statusColor = "green";
+        if (status === "Inactive") statusColor = "red";
+
+        return <Badge color={statusColor} text={status} />;
+      }
     },
     {
       title: "NameType",

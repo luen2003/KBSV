@@ -77,7 +77,7 @@ const Manage: React.FC = () => {
   };
 
   const data = {
-    totalRows: 1,
+    totalRows: 2,
     first: 0,
     rows: 1,
     items: [
@@ -88,6 +88,16 @@ const Manage: React.FC = () => {
         status: "Active",
         gender: "Male",
         name: "John - X - Smitty",
+        dob: "-",
+        country: "USA"
+      },
+      {
+        key: "2",
+        id: "13062116",
+        type: "Person",
+        status: "Inactive",
+        gender: "Male",
+        name: "Jane Street",
         dob: "-",
         country: "USA"
       }
@@ -134,7 +144,13 @@ const Manage: React.FC = () => {
       renderFilter: ({ column, confirm, ref }: any) => (
         <FilterInput column={column} confirm={confirm} ref={ref} />
       ),
-      render: (text: string) => <Badge color="green" text={text} />
+      render: (status: string) => {
+        let statusColor = "gray";
+        if (status === "Active") statusColor = "green";
+        if (status === "Inactive") statusColor = "red";
+
+        return <Badge color={statusColor} text={status} />;
+      }
     },
     {
       title: "Gender",
