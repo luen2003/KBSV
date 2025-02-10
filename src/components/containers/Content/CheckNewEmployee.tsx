@@ -14,6 +14,7 @@ import { Badge, DatePicker } from "antd";
 const { Option } = Select;
 import CustomerTable from "./CustomTable";
 import Annotate from "./Annotate";
+const { Dragger } = Upload; // Import the Dragger component for drag-and-drop file upload
 
 const data = [
   {
@@ -685,19 +686,35 @@ const CheckNewEmployee: React.FC = () => {
           {/* Modal để nhập file */}
           <Modal
             title="Import File DowJones"
-            visible={isModalVisible}
+            open={isModalVisible}
             onCancel={() => setIsModalVisible(false)}
             footer={null}
+            width={1000}
           >
-            <Upload
+            <Dragger
               beforeUpload={() => false}
               fileList={fileList}
               onChange={handleFileChange}
+              onRemove={(file) => {
+                setFileList([]); // Xóa toàn bộ danh sách file
+              }}
             >
-              <button className="btn btn-outline-primary">
-                <UploadOutlined /> Chọn file
-              </button>
-            </Upload>
+              {fileList.length > 0 ? (
+                <>
+                  <Tag color="purple" style={{ marginTop: 10, fontSize: 14 }}>
+                    {fileList[0]?.name}
+                  </Tag>
+                </>
+              ) : (
+                <>
+                  <p className="ant-upload-text">Kéo và thả file vào đây</p>
+                  <p className="ant-upload-hint">
+                    Chỉ chấp nhận các file định dạng .txt, .csv, .xls, .xlsx
+                    (tối đa 10MB)
+                  </p>
+                </>
+              )}
+            </Dragger>
             {errorMessage && (
               <div style={{ color: "red", marginTop: "10px" }}>
                 {errorMessage}

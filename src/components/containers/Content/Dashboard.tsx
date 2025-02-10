@@ -12,6 +12,8 @@ import { EyeOutlined } from "@ant-design/icons";
 import { FilterInput } from "@components/common/Table";
 import { Badge } from "antd";
 const { Option } = Select;
+const { Dragger } = Upload; // Import the Dragger component for drag-and-drop file upload
+
 const data = [
   {
     key: "1",
@@ -536,39 +538,59 @@ const Dashboard: React.FC = () => {
             )}
           </Modal>
           {/* Modal để nhập file */}
+
           <Modal
             title="Import File DowJones"
-            visible={isModalVisible}
+            open={isModalVisible}
             onCancel={() => setIsModalVisible(false)}
             footer={null}
+            width={1000}
           >
-            <Upload
+            <Dragger
               beforeUpload={() => false}
               fileList={fileList}
               onChange={handleFileChange}
+              onRemove={(file) => {
+                setFileList([]); // Xóa toàn bộ danh sách file
+              }}
             >
-              <button className="btn btn-outline-primary">
-                <UploadOutlined /> Chọn file
-              </button>
-            </Upload>
+              {fileList.length > 0 ? (
+                <>
+                  <Tag color="purple" style={{ marginTop: 10, fontSize: 14 }}>
+                    {fileList[0]?.name}
+                  </Tag>
+                </>
+              ) : (
+                <>
+                  <p className="ant-upload-text">Kéo và thả file vào đây</p>
+                  <p className="ant-upload-hint">
+                    Chỉ chấp nhận các file định dạng .txt, .csv, .xls, .xlsx
+                    (tối đa 10MB)
+                  </p>
+                </>
+              )}
+            </Dragger>
             {errorMessage && (
               <div style={{ color: "red", marginTop: "10px" }}>
                 {errorMessage}
               </div>
             )}
-            <div className="mt-3 d-flex justify-content-center">
-              <button className="btn btn-primary me-2" onClick={handleReadFile}>
-                Đọc file
-              </button>
-              {fileList.length > 0 && (
-                <button
-                  className="btn btn-secondary"
-                  onClick={() => setFileList([])}
-                >
-                  Tải lại file
-                </button>
-              )}
-            </div>
+            <Button
+              type="primary"
+              onClick={handleReadFile}
+              style={{ marginTop: "10px" }}
+            >
+              Read File
+            </Button>
+            {fileList.length > 0 && (
+              <Button
+                type="primary"
+                onClick={() => setFileList([])}
+                style={{ marginTop: "10px", marginLeft: "5px" }}
+              >
+                Tải lại file
+              </Button>
+            )}
           </Modal>
         </div>
       </div>

@@ -10,7 +10,8 @@ import {
   Form,
   Input,
   Row,
-  Col
+  Col,
+  Tag
 } from "antd";
 import { HomeOutlined, EyeOutlined, UploadOutlined } from "@ant-design/icons";
 import { UploadChangeParam, UploadFile } from "antd/es/upload/interface";
@@ -20,12 +21,14 @@ import GridTable from "@components/common/Table/Table";
 import EmployeeModal from "./EmployeeModal";
 import SuccessModal from "./SuccessModal";
 import { Badge } from "antd";
+
 message.config({
   duration: 3,
   maxCount: 1
 });
 
 const { Option } = Select;
+const { Dragger } = Upload; // Import the Dragger component for drag-and-drop file upload
 
 const Manage: React.FC = () => {
   const [pageSize, setPageSize] = useState<number>(10);
@@ -259,14 +262,32 @@ const Manage: React.FC = () => {
         open={isModalVisible}
         onCancel={() => setIsModalVisible(false)}
         footer={null}
+        width={1000}
       >
-        <Upload
+        <Dragger
           beforeUpload={() => false}
           fileList={fileList}
           onChange={handleFileChange}
+          onRemove={(file) => {
+            setFileList([]); // Xóa toàn bộ danh sách file
+          }}
         >
-          <Button icon={<UploadOutlined />}>Choose File</Button>
-        </Upload>
+          {fileList.length > 0 ? (
+            <>
+              <Tag color="purple" style={{ marginTop: 10, fontSize: 14 }}>
+                {fileList[0]?.name}
+              </Tag>
+            </>
+          ) : (
+            <>
+              <p className="ant-upload-text">Kéo và thả file vào đây</p>
+              <p className="ant-upload-hint">
+                Chỉ chấp nhận các file định dạng .txt, .csv, .xls, .xlsx (tối đa
+                10MB)
+              </p>
+            </>
+          )}
+        </Dragger>
         {errorMessage && (
           <div style={{ color: "red", marginTop: "10px" }}>{errorMessage}</div>
         )}
@@ -277,6 +298,15 @@ const Manage: React.FC = () => {
         >
           Read File
         </Button>
+        {fileList.length > 0 && (
+          <Button
+            type="primary"
+            onClick={() => setFileList([])}
+            style={{ marginTop: "10px", marginLeft: "5px" }}
+          >
+            Tải lại file
+          </Button>
+        )}
       </Modal>
 
       <EmployeeModal

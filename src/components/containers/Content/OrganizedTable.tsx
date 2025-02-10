@@ -233,7 +233,6 @@ const OrganizedTable = () => {
         <>
           <Space direction="horizontal" size="small">
             {" "}
-            {/* Space theo chiều dọc */}
             <div style={{ display: "flex", alignItems: "center" }}>
               <p style={{ margin: 0, marginRight: "5px" }}>Tỉ lệ trùng khớp:</p>
               <Tag color="#F0F4FE" style={{ color: "black" }}>
