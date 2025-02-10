@@ -425,3 +425,13 @@ input[readonly]:hover {
   min-height: 100vh;
   width: 100%;
 }
+:where(.css-dev-only-do-not-override-cdzvx5).ant-tag.ant-tag-purple {
+  color: #3355a6 !important;
+  background: #ebebeb !important;
+  border-color: #ebebeb !important;
+}
+:where(.css-dev-only-do-not-override-cdzvx5).ant-tag {
+  color: #3355a6 !important;
+  background: #ebebeb !important;
+  border-color: #ebebeb !important;
+}
