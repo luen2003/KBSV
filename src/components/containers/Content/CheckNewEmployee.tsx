@@ -689,7 +689,7 @@ const CheckNewEmployee: React.FC = () => {
             open={isModalVisible}
             onCancel={() => setIsModalVisible(false)}
             footer={null}
-            width={1000}
+            width={800}
           >
             <Dragger
               beforeUpload={() => false}
@@ -720,22 +720,23 @@ const CheckNewEmployee: React.FC = () => {
                 {errorMessage}
               </div>
             )}
-            <Button
-              type="primary"
-              onClick={handleReadFile}
-              style={{ marginTop: "10px" }}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "10px",
+                marginTop: "10px"
+              }}
             >
-              Read File
-            </Button>
-            {fileList.length > 0 && (
-              <Button
-                type="primary"
-                onClick={() => setFileList([])}
-                style={{ marginTop: "10px", marginLeft: "5px" }}
-              >
-                Tải lại file
+              <Button type="primary" onClick={handleReadFile}>
+                Đọc file
               </Button>
-            )}
+              {fileList.length > 0 && (
+                <Button type="primary" onClick={() => setFileList([])}>
+                  Tải lại file
+                </Button>
+              )}
+            </div>
           </Modal>
           <Modal
             title={"Chi tiết nhân viên"}

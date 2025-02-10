@@ -262,7 +262,7 @@ const Manage: React.FC = () => {
         open={isModalVisible}
         onCancel={() => setIsModalVisible(false)}
         footer={null}
-        width={1000}
+        width={800}
       >
         <Dragger
           beforeUpload={() => false}
@@ -291,19 +291,11 @@ const Manage: React.FC = () => {
         {errorMessage && (
           <div style={{ color: "red", marginTop: "10px" }}>{errorMessage}</div>
         )}
-        <Button
-          type="primary"
-          onClick={handleReadFile}
-          style={{ marginTop: "10px" }}
-        >
-          Read File
+        <Button type="primary" onClick={handleReadFile}>
+          Đọc file
         </Button>
         {fileList.length > 0 && (
-          <Button
-            type="primary"
-            onClick={() => setFileList([])}
-            style={{ marginTop: "10px", marginLeft: "5px" }}
-          >
+          <Button type="primary" onClick={() => setFileList([])}>
             Tải lại file
           </Button>
         )}
