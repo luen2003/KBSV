@@ -566,7 +566,7 @@ const CheckOldEmployee = () => {
               <HomeOutlined />
             </Breadcrumb.Item>
             <Breadcrumb.Item>Phòng chống rửa tiền</Breadcrumb.Item>
-            <Breadcrumb.Item>Kiểm tra KH mới</Breadcrumb.Item>
+            <Breadcrumb.Item>Kiểm tra KH cũ/ nhân viên</Breadcrumb.Item>
           </Breadcrumb>
 
           {/* Role Selector */}

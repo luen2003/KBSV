@@ -229,32 +229,6 @@ const Manage: React.FC = () => {
             fetchData={fetchData}
             addIndexCol={true}
           />
-
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              marginTop: "20px"
-            }}
-          >
-            <Pagination
-              current={currentPage}
-              total={50}
-              pageSize={pageSize}
-              onChange={setCurrentPage}
-            />
-            <Select
-              defaultValue={pageSize}
-              onChange={handlePageSizeChange}
-              style={{ width: 120 }}
-            >
-              <Option value={10}>10 rows</Option>
-              <Option value={20}>20 rows</Option>
-              <Option value={30}>30 rows</Option>
-              <Option value={50}>50 rows</Option>
-              <Option value={100}>100 rows</Option>
-            </Select>
-          </div>
         </div>
       </div>
 
@@ -306,14 +280,26 @@ const Manage: React.FC = () => {
         {errorMessage && (
           <div style={{ color: "red", marginTop: "10px" }}>{errorMessage}</div>
         )}
-        <Button type="primary" onClick={handleReadFile}>
-          Đọc file
-        </Button>
-        {fileList.length > 0 && (
-          <Button type="primary" onClick={() => setFileList([])}>
-            Tải lại file
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "10px",
+            marginTop: "10px"
+          }}
+        >
+          <Button type="primary" onClick={handleReadFile}>
+            Đọc file
           </Button>
-        )}
+          {fileList.length > 0 && (
+            <Button
+              type="primary"
+              onClick={() => setFileList([])}
+            >
+              Tải lại file
+            </Button>
+          )}
+        </div>
       </Modal>
 
       <EmployeeModal

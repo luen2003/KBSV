@@ -557,32 +557,6 @@ const CheckNewEmployee: React.FC = () => {
             addIndexCol={true}
           />
 
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              marginTop: "20px"
-            }}
-          >
-            <Pagination
-              current={currentPage}
-              total={dataTable.totalRows} // Tổng số dòng dữ liệu
-              pageSize={pageSize}
-              onChange={setCurrentPage}
-            />
-            <Select
-              defaultValue={pageSize}
-              onChange={handlePageSizeChange}
-              style={{ width: 120 }}
-            >
-              <Option value={10}>10 dòng</Option>
-              <Option value={20}>20 dòng</Option>
-              <Option value={30}>30 dòng</Option>
-              <Option value={50}>50 dòng</Option>
-              <Option value={100}>100 dòng</Option>
-            </Select>
-          </div>
           <Modal
             title="Thông tin chi tiết"
             visible={isModalDetailVisible} // Only show modal if there's content
