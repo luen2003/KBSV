@@ -430,8 +430,4 @@ input[readonly]:hover {
   background: #ebebeb !important;
   border-color: #ebebeb !important;
 }
-:where(.css-dev-only-do-not-override-cdzvx5).ant-tag {
-  color: #3355a6 !important;
-  background: #ebebeb !important;
-  border-color: #ebebeb !important;
-}
+
