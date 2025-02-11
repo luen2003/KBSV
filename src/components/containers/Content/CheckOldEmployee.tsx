@@ -558,14 +558,6 @@ const CheckOldEmployee = () => {
     <div className="body relative w-full h-full">
       <div className="flex flex-row w-full h-full">
         <div className="dashboard-container">
-          <Breadcrumb style={{ marginBottom: "20px" }}>
-            <Breadcrumb.Item href="/">
-              <HomeOutlined />
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>Phòng chống rửa tiền</Breadcrumb.Item>
-            <Breadcrumb.Item>Kiểm tra KH cũ/ nhân viên</Breadcrumb.Item>
-          </Breadcrumb>
-
           {/* Role Selector */}
           <div className="flex items-center justify-end mb-4">
             <div className="flex items-center gap-4">

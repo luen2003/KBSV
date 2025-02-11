@@ -202,14 +202,6 @@ const Manage: React.FC = () => {
     <div className="body relative w-full h-full">
       <div className="flex flex-row w-full h-full">
         <div className="dashboard-container flex-1 bg-gray-100 p-4">
-          <Breadcrumb style={{ marginBottom: "10px" }}>
-            <Breadcrumb.Item href="/">
-              <HomeOutlined />
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>Anti-Money Laundering</Breadcrumb.Item>
-            <Breadcrumb.Item>Manage DowJones Watchlists</Breadcrumb.Item>
-          </Breadcrumb>
-
           <div
             style={{
               display: "flex",
@@ -291,10 +283,7 @@ const Manage: React.FC = () => {
             Đọc file
           </Button>
           {fileList.length > 0 && (
-            <Button
-              type="primary"
-              onClick={() => setFileList([])}
-            >
+            <Button type="primary" onClick={() => setFileList([])}>
               Tải lại file
             </Button>
           )}

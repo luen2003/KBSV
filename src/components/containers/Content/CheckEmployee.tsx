@@ -511,17 +511,8 @@ const CheckEmployee = () => {
   return (
     <div className="body relative w-full h-full">
       <div className="flex flex-row w-full h-full">
-        <div className="h-[calc(100%+250px)]">
-        </div>
+        <div className="h-[calc(100%+250px)]"></div>
         <div className="dashboard-container">
-          <Breadcrumb style={{ marginBottom: "20px" }}>
-            <Breadcrumb.Item href="/">
-              <HomeOutlined />
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>Phòng chống rửa tiền</Breadcrumb.Item>
-            <Breadcrumb.Item>Kiểm tra KH mới</Breadcrumb.Item>
-          </Breadcrumb>
-
           {/* Role Selector */}
           <div className="flex items-center justify-end mb-4">
             <div className="flex items-center gap-4">

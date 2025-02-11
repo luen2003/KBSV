@@ -516,14 +516,6 @@ const CheckNewEmployee: React.FC = () => {
     <div className="body relative w-full h-full">
       <div className="flex flex-row w-full h-full">
         <div className="dashboard-container">
-          <Breadcrumb style={{ marginBottom: "20px" }}>
-            <Breadcrumb.Item href="/">
-              <HomeOutlined />
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>Phòng chống rửa tiền</Breadcrumb.Item>
-            <Breadcrumb.Item>Tra cứu y/c kiểm tra KH mới</Breadcrumb.Item>
-          </Breadcrumb>
-
           <div
             style={{
               display: "flex",
