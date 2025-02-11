@@ -201,7 +201,6 @@ const Manage: React.FC = () => {
   return (
     <div className="body relative w-full h-full">
       <div className="flex flex-row w-full h-full">
-        <RightSideBar />
         <div className="dashboard-container flex-1 bg-gray-100 p-4">
           <Breadcrumb style={{ marginBottom: "10px" }}>
             <Breadcrumb.Item href="/">

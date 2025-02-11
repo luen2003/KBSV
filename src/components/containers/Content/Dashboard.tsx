@@ -359,7 +359,6 @@ const Dashboard: React.FC = () => {
   return (
     <div className="body relative w-full h-full">
       <div className="flex flex-row w-full h-full">
-        <RightSideBar />
         <div className="dashboard-container">
           <Breadcrumb style={{ marginBottom: "20px" }}>
             <Breadcrumb.Item href="/">

@@ -201,23 +201,6 @@ export const routesMain: IRoute[] = [
         children={<ReconciliationIndex />}
       />
     )
-  }
-];
-
-export const routes: IRoute[] = [
-  {
-    path: PATH_BASE,
-    element: <Main />,
-    children: routesMain,
-    isNeedLogin: true
-  },
-  {
-    path: PATH_NOT_FOUND,
-    element: <NotFound />
-  },
-  {
-    path: PATH_LOGIN,
-    element: <Login />
   },
   {
     path: "/dashboard",
@@ -238,5 +221,22 @@ export const routes: IRoute[] = [
   {
     path: "/checkOldEmployee",
     element: <CheckOldEmployee />
+  }
+];
+
+export const routes: IRoute[] = [
+  {
+    path: PATH_BASE,
+    element: <Main />,
+    children: routesMain,
+    isNeedLogin: true
+  },
+  {
+    path: PATH_NOT_FOUND,
+    element: <NotFound />
+  },
+  {
+    path: PATH_LOGIN,
+    element: <Login />
   }
 ];
