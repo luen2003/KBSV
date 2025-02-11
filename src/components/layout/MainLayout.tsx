@@ -14,10 +14,13 @@ function MainLayout(): JSX.Element {
       <div className="body relative w-full h-full">
         <div className="flex flex-row w-full h-full">
           <RightSideBar />
-          <div className="w-full h-full flex flex-col overflow-hidden pr-1">
+          <div className="w-full h-full flex flex-col overflow-auto pr-1">
             <Header />
-            <div className="h-full flex-1 overflow-hidden bg-[#ebebeb]">
-              <div className="h-full" style={{background: "#FFFFFF" , marginTop: ".05rem"}}>
+            <div className="h-full flex-1 overflow-auto bg-[#ebebeb]">
+              <div
+                className="h-full"
+                style={{ background: "#FFFFFF", marginTop: ".05rem" }}
+              >
                 <Outlet />
               </div>
             </div>
