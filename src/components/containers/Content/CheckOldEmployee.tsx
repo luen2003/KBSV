@@ -557,8 +557,6 @@ const CheckOldEmployee = () => {
   return (
     <div className="body relative w-full h-full">
       <div className="flex flex-row w-full h-full">
-        <div className="h-[calc(100%+250px)]">
-        </div>
         <div className="dashboard-container">
           <Breadcrumb style={{ marginBottom: "20px" }}>
             <Breadcrumb.Item href="/">

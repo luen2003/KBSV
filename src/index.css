@@ -430,3 +430,21 @@ input[readonly]:hover {
   background: #ebebeb !important;
   border-color: #ebebeb !important;
 }
+label {
+  display: block !important;
+  visibility: visible !important;
+  z-index: 1 !important; /* Đảm bảo label không bị ẩn bởi các phần tử khác */
+}
+.ant-form-item-label {
+  display: block !important;
+  visibility: visible !important;
+}
+label {
+  display: block;
+  visibility: visible;
+  color: #000; /* Đảm bảo chữ label có màu */
+}
+
+.text-red-500 {
+  color: red; /* Đảm bảo dấu sao đỏ có màu đúng */
+}
