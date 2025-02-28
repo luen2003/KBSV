@@ -77,6 +77,7 @@ const Manage: React.FC = () => {
     if (headerCell) {
       headerCell.click(); // Ép kiểu để sử dụng phương thức click()
     }
+    fetchEmployeeList();
   };
 
   const handleEyeClick = (item: any) => {
@@ -336,7 +337,10 @@ const Manage: React.FC = () => {
       renderFilter: ({ column, confirm }: any) => (
         <CustomFilterInput
           column={column}
-          confirm={confirm}
+          confirm={()=>{
+            confirm();
+            fetchEmployeeList();
+          }}
           onChange={handleFilterChange}
         />
       ),
@@ -355,7 +359,10 @@ const Manage: React.FC = () => {
       renderFilter: ({ column, confirm }: any) => (
         <CustomFilterInput
           column={column}
-          confirm={confirm}
+          confirm={()=>{
+            confirm();
+            fetchEmployeeList();
+          }}
           onChange={handleFilterChange}
         />
       ),
@@ -374,7 +381,10 @@ const Manage: React.FC = () => {
       renderFilter: ({ column, confirm }: any) => (
         <CustomFilterInput
           column={column}
-          confirm={confirm}
+          confirm={()=>{
+            confirm();
+            fetchEmployeeList();
+          }}
           onChange={handleFilterChange}
         />
       ),
@@ -391,7 +401,10 @@ const Manage: React.FC = () => {
       renderFilter: ({ column, confirm }: any) => (
         <CustomFilterInput
           column={column}
-          confirm={confirm}
+          confirm={()=>{
+            confirm();
+            fetchEmployeeList();
+          }}
           onChange={handleFilterChange}
         />
       ),
