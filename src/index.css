@@ -448,3 +448,26 @@ label {
 .text-red-500 {
   color: red; /* Đảm bảo dấu sao đỏ có màu đúng */
 }
+
+/* Thêm vào CSS */
+.ant-modal-title {
+  text-align: center;
+  width: 100%;
+}
+
+/* Cập nhật Modal content để có thể cuộn khi cần thiết */
+.ant-modal-body {
+  max-height: 60vh; /* Thiết lập chiều cao tối đa */
+  overflow-y: auto; /* Cho phép cuộn dọc */
+}
+
+/* Đảm bảo rằng modal luôn có chiều cao giới hạn */
+.ant-modal {
+  overflow: hidden; /* Ngăn không cho cuộn toàn bộ modal */
+}
+
+/* Cải thiện phần cuộn của table trong modal nếu có */
+.ant-table-body {
+  max-height: 400px; /* Giới hạn chiều cao cho bảng */
+  overflow-y: auto; /* Cho phép cuộn dọc */
+}

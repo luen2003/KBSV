@@ -19,7 +19,7 @@ export default function useRightSideBar() {
   const { handleLogout } = useLogout();
   const dispatch = useDispatch();
   const getData = async () => {
-    const response: IMenu[] = await menuService.getMenu();
+    //const response: IMenu[] = await menuService.getMenu();
     const businessFeatureMenu: IMenu = {
       id: "1323",
       name: "Quản lý khách hàng ",
@@ -74,11 +74,13 @@ export default function useRightSideBar() {
     };
 
     // Combine fetched data and the new items
-    const updatedMenu = [...response, businessFeatureMenu, logoutMenu];
+    //const updatedMenu = [...response, businessFeatureMenu, logoutMenu];
+    const updatedMenu = [businessFeatureMenu, logoutMenu];
 
     setMenu(updatedMenu);
-    const menus: any[] = flatten({ children: response });
-    dispatch(storeMenus(menus));
+    //const menus: any[] = flatten({ children: response });
+    //dispatch(storeMenus(menus));
+    dispatch(storeMenus(updatedMenu));
   };
 
   useEffect(() => {

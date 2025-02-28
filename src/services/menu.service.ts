@@ -18,10 +18,15 @@ export const getMenu = async () => {
     } else {
       const url = `/api/v1/menu/get-menu-tree-by-current-user`;
       const response = await api.withAuth.get(url);
-      if (response.data.code === 0) {
+      /*if (response.data.code === 0) {
         return response.data.value;
       } else {
         console.log(response.data);
+      }*/
+      if (mockData.code === 0) {
+        return mockData.value;
+      } else {
+        console.log(mockData);
       }
     }
   } catch (e) {

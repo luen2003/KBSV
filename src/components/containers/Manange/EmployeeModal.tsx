@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Modal, Button, Input, Row, Col } from "antd";
 
 interface EmployeeData {
@@ -64,7 +65,7 @@ const EmployeeModal: React.FC<EmployeeModalProps> = ({
         </Button>
       ]}
       width={800}
-      closable={false}
+      closable={true}
     >
       <Row gutter={[16, 16]}>
         <Col span={8}>

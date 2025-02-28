@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { Table, Tag, Space } from "antd";
+
 import GridTable from "@components/common/Table/Table";
+import { Table, Tag, Space } from "antd";
 
 const CustomerTable = () => {
   const tableRef = useRef<any>(null);

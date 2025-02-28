@@ -1,26 +1,31 @@
+import { PermissionWrapper } from "@components/common/PermissionWrapper";
 import { AccountBlackListIndex } from "@components/containers/AccountBlackList";
 import { BalanceQueryIndex } from "@components/containers/BalanceQuery";
 import { BankConfigIndex } from "@components/containers/BankConfig";
+import CheckEmployee from "@components/containers/CheckEmployee";
+import CheckNewEmployee from "@components/containers/CheckNewEmployee";
+import CheckOldEmployee from "@components/containers/CheckOldEmployee";
 import { CitadAccountIndex } from "@components/containers/CitadAccount";
+import Dashboard from "@components/containers/Dashboard";
 import { ErrorAccountingTransferIndex } from "@components/containers/ErrorAccountingTransfer";
 import Example from "@components/containers/example-dev";
 import { InternalTransferAccountIndex } from "@components/containers/InternalTransferAccount";
 import ManagePaymentIdentification from "@components/containers/ManagePaymentIdentification";
+import Manage from "@components/containers/Manange";
 import { ActionLog } from "@components/containers/monitor/action-log";
 import { MonitorDepositConsumer } from "@components/containers/monitor/deposit-consumer";
 import { TransferLog } from "@components/containers/monitor/transfer-log";
+import { ReconciliationIndex } from "@components/containers/Reconciliation";
 import { RequestOrder } from "@components/containers/RequestOrder";
 import { RoleIndex } from "@components/containers/Role";
+import { TransferDeposit } from "@components/containers/TransferDeposit";
+import { WithdrawTransferIndex } from "@components/containers/TransferWithdraw";
 import { UncompletedWithdraw } from "@components/containers/UncompletedWithdraw";
 import { UserIndex } from "@components/containers/user";
+import { WithdrawRefusedByBankIndex } from "@components/containers/withdraw-refused-by-bank";
 import type { IRoute } from "@interfaces/route";
 import { Login, Main, NotFound } from "@pages";
-import { WithdrawTransferIndex } from "@components/containers/TransferWithdraw";
-import Dashboard from "@components/containers/Content/Dashboard";
-import Manage from "@components/containers/Content/Manage";
-import CheckEmployee from "@components/containers/Content/CheckEmployee";
-import CheckNewEmployee from "@components/containers/Content/CheckNewEmployee";
-import CheckOldEmployee from "@components/containers/Content/CheckOldEmployee";
+
 import {
   PATH_BANK,
   PATH_BASE,
@@ -45,11 +50,6 @@ import {
   PATH_WITHDRAW_TRANSFER,
   PATH_EXPORT_RECONCILIATION
 } from "./router.constants";
-import { TransferDeposit } from "@components/containers/TransferDeposit";
-import { ReconciliationIndex } from "@components/containers/Reconciliation";
-
-import { WithdrawRefusedByBankIndex } from "@components/containers/withdraw-refused-by-bank";
-import { PermissionWrapper } from "@components/common/PermissionWrapper";
 
 export const routesMain: IRoute[] = [
   {
@@ -59,6 +59,7 @@ export const routesMain: IRoute[] = [
   {
     path: PATH_BANK,
     element: (
+      // eslint-disable-next-line react/no-children-prop
       <PermissionWrapper key={PATH_BANK} children={<BankConfigIndex />} />
     )
   },
@@ -67,6 +68,7 @@ export const routesMain: IRoute[] = [
     element: (
       <PermissionWrapper
         key={PATH_MANAGE_PAYMENT_IDENTIFICATION}
+        // eslint-disable-next-line react/no-children-prop
         children={<ManagePaymentIdentification />}
       />
     )
@@ -76,6 +78,7 @@ export const routesMain: IRoute[] = [
     element: (
       <PermissionWrapper
         key={PATH_INTERNAL_TRANSFER_ACCOUNT}
+        // eslint-disable-next-line react/no-children-prop
         children={<InternalTransferAccountIndex />}
       />
     )
@@ -85,6 +88,7 @@ export const routesMain: IRoute[] = [
     element: (
       <PermissionWrapper
         key={PATH_BALANCE_QUERY}
+        // eslint-disable-next-line react/no-children-prop
         children={<BalanceQueryIndex />}
       />
     )
@@ -94,6 +98,7 @@ export const routesMain: IRoute[] = [
     element: (
       <PermissionWrapper
         key={PATH_MONITOR_ACTIVITY_LOG}
+        // eslint-disable-next-line react/no-children-prop
         children={<ActionLog />}
       />
     )
@@ -103,6 +108,7 @@ export const routesMain: IRoute[] = [
     element: (
       <PermissionWrapper
         key={PATH_ERROR_ACCOUNTING_TRANSFER}
+        // eslint-disable-next-line react/no-children-prop
         children={<ErrorAccountingTransferIndex />}
       />
     )
@@ -110,6 +116,7 @@ export const routesMain: IRoute[] = [
   {
     path: PATH_REQUEST_ORDER,
     element: (
+      // eslint-disable-next-line react/no-children-prop
       <PermissionWrapper key={PATH_REQUEST_ORDER} children={<RequestOrder />} />
     )
   },
@@ -118,6 +125,7 @@ export const routesMain: IRoute[] = [
     element: (
       <PermissionWrapper
         key={PATH_CITAD_ACCOUNT}
+        // eslint-disable-next-line react/no-children-prop
         children={<CitadAccountIndex />}
       />
     )
@@ -127,6 +135,7 @@ export const routesMain: IRoute[] = [
     element: (
       <PermissionWrapper
         key={PATH_MONITOR_TRANSFER_LOG}
+        // eslint-disable-next-line react/no-children-prop
         children={<TransferLog />}
       />
     )
@@ -136,16 +145,19 @@ export const routesMain: IRoute[] = [
     element: (
       <PermissionWrapper
         key={PATH_ACCOUNT_BLACKLIST}
+        // eslint-disable-next-line react/no-children-prop
         children={<AccountBlackListIndex />}
       />
     )
   },
   {
     path: PATH_ROLE,
+    // eslint-disable-next-line react/no-children-prop
     element: <PermissionWrapper key={PATH_ROLE} children={<RoleIndex />} />
   },
   {
     path: PATH_USER,
+    // eslint-disable-next-line react/no-children-prop
     element: <PermissionWrapper key={PATH_USER} children={<UserIndex />} />
   },
   {
@@ -153,6 +165,7 @@ export const routesMain: IRoute[] = [
     element: (
       <PermissionWrapper
         key={PATH_MONITOR_DEPOSIT_CONSUMER}
+        // eslint-disable-next-line react/no-children-prop
         children={<MonitorDepositConsumer />}
       />
     )
@@ -162,6 +175,7 @@ export const routesMain: IRoute[] = [
     element: (
       <PermissionWrapper
         key={PATH_WITHDRAW_REFUSED_BY_BANK}
+        // eslint-disable-next-line react/no-children-prop
         children={<WithdrawRefusedByBankIndex />}
       />
     )
@@ -171,6 +185,7 @@ export const routesMain: IRoute[] = [
     element: (
       <PermissionWrapper
         key={PATH_UNCOMPLETED_WITHDRAW}
+        // eslint-disable-next-line react/no-children-prop
         children={<UncompletedWithdraw />}
       />
     )
@@ -180,6 +195,7 @@ export const routesMain: IRoute[] = [
     element: (
       <PermissionWrapper
         key={PATH_TRANSFER_DEPOSIT}
+        // eslint-disable-next-line react/no-children-prop
         children={<TransferDeposit />}
       />
     )
@@ -189,6 +205,7 @@ export const routesMain: IRoute[] = [
     element: (
       <PermissionWrapper
         key={PATH_WITHDRAW_TRANSFER}
+        // eslint-disable-next-line react/no-children-prop
         children={<WithdrawTransferIndex />}
       />
     )
@@ -198,6 +215,7 @@ export const routesMain: IRoute[] = [
     element: (
       <PermissionWrapper
         key={PATH_EXPORT_RECONCILIATION}
+        // eslint-disable-next-line react/no-children-prop
         children={<ReconciliationIndex />}
       />
     )

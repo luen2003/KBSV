@@ -30,7 +30,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const initValue: IFormLoginValue = {
-    username: "user-sample",
+    username: "user-admin",
     password: "123456"
   };
   const validationSchema = Yup.object().shape({
@@ -79,12 +79,13 @@ const Login = () => {
       localStorage.removeItem("mockUsername");
       // Nếu không tìm thấy user trong mockUsers, gọi API để đăng nhập thật
       const data = await loginService.login(username, password);
-
       if (data && "access_token" in data) {
+        // Dùng tất cả dữ liệu trả về từ API
         dispatch(storeCommonUpdateAuth(data));
         setCookie("token:session", "on");
         setCookie("token:exprise", "on", data.expires_in);
         dispatch(storeUpdateAccountInfo({ username: data.username }));
+        localStorage.setItem("token", data.access_token);
         navigate(PATH_REQUEST_ORDER);
       } else if (data && "code" in data && data.code === -1) {
         toast.error(t("login:loginFailed") as string);

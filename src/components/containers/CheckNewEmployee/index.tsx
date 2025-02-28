@@ -1,20 +1,37 @@
 import { useEffect, useRef, useState } from "react";
-import { Breadcrumb, Pagination, Select, Modal, Upload, message } from "antd";
+
 import {
   HomeOutlined,
   UploadOutlined,
   FilterOutlined,
-  FileOutlined
+  FileOutlined,
+  EyeOutlined,
+  CloudUploadOutlined
 } from "@ant-design/icons";
-import { Button, Form, Input, Row, Col, Tag, Table } from "antd";
-import GridTable from "@components/common/Table/Table"; // Ensure GridTable is properly imported
-import RightSideBar from "../../layout/components/RightSideBar";
-import { EyeOutlined } from "@ant-design/icons";
 import { FilterInput } from "@components/common/Table";
-import { Badge, DatePicker } from "antd";
-const { Option } = Select;
-import CustomerTable from "./CustomTable";
+import GridTable from "@components/common/Table/Table"; // Ensure GridTable is properly imported
+import {
+  Button,
+  Form,
+  Input,
+  Row,
+  Col,
+  Tag,
+  Table,
+  Breadcrumb,
+  Pagination,
+  Select,
+  Modal,
+  Upload,
+  message,
+  Badge,
+  DatePicker
+} from "antd";
+
 import Annotate from "./Annotate";
+import CustomerTable from "./CustomTable";
+import RightSideBar from "../../layout/components/RightSideBar";
+const { Option } = Select;
 const { Dragger } = Upload; // Import the Dragger component for drag-and-drop file upload
 
 const data = [
@@ -687,7 +704,9 @@ const CheckNewEmployee: React.FC = () => {
                 </>
               ) : (
                 <>
-                  <p className="ant-upload-text">Kéo và thả file vào đây</p>
+                  <p className="ant-upload-text">
+                    <CloudUploadOutlined />
+                  </p>
                   <p className="ant-upload-hint">
                     Chỉ chấp nhận các file định dạng .txt, .csv, .xls, .xlsx
                     (tối đa 10MB)

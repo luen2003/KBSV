@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { Table, Tag, Space } from "antd";
-import GridTable from "@components/common/Table/Table";
 
-const OrganizedTable = () => {
+import GridTable from "@components/common/Table/Table";
+import { Table, Tag, Space } from "antd";
+
+const CustomerTable = () => {
   const tableRef = useRef<any>(null);
 
   const fetchData = async () => {
@@ -233,6 +234,7 @@ const OrganizedTable = () => {
         <>
           <Space direction="horizontal" size="small">
             {" "}
+            {/* Space theo chiều dọc */}
             <div style={{ display: "flex", alignItems: "center" }}>
               <p style={{ margin: 0, marginRight: "5px" }}>Tỉ lệ trùng khớp:</p>
               <Tag color="#F0F4FE" style={{ color: "black" }}>
@@ -344,69 +346,10 @@ const OrganizedTable = () => {
           </Tag>
         </>
       )
-    },
-    {
-      key: "5",
-      kbInfo: (
-        <>
-          <p>
-            <b>Mã số thuế:</b>
-          </p>
-          <Tag
-            style={{
-              border: "1px solid #ccc",
-              backgroundColor: "#FECACA",
-              color: "black"
-            }}
-          >
-            0123456789
-          </Tag>{" "}
-        </>
-      ),
-      dowjonesInfo: (
-        <>
-          <p>
-            <b>National Tax No:</b>
-          </p>
-          <Tag
-            style={{
-              border: "1px solid #ccc",
-              backgroundColor: "#FECACA",
-              color: "black"
-            }}
-          >
-            012345686242
-          </Tag>{" "}
-        </>
-      )
-    },
-    {
-      key: "6",
-      kbInfo: (
-        <>
-          <p>
-            <b>Ngành nghề:</b>
-          </p>
-          <Tag
-            style={{
-              border: "1px solid #ccc",
-              backgroundColor: "white",
-              color: "black"
-            }}
-          >
-            Tài chính ngân hàng
-          </Tag>{" "}
-        </>
-      ),
-      dowjonesInfo: (
-        <>
-          <p style={{ color: "red" }}>Không có thông tin</p>
-        </>
-      )
     }
   ];
 
   return <Table columns={columns} dataSource={data} pagination={false} />;
 };
 
-export default OrganizedTable;
+export default CustomerTable;

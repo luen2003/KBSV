@@ -1,4 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
+
+import {
+  SyncOutlined,
+  EyeOutlined,
+  HomeOutlined,
+  ArrowDownOutlined,
+  FilterOutlined
+} from "@ant-design/icons";
+import { FilterInput } from "@components/common/Table";
+import GridTable from "@components/common/Table/Table"; // Ensure GridTable is properly imported
+import { RightSideBar } from "@components/layout/components";
 import {
   Input,
   Button,
@@ -9,18 +20,15 @@ import {
   message,
   Table,
   Badge,
-  Tag
+  Tag,
+  type RadioChangeEvent,
+  Breadcrumb
 } from "antd";
-import { RadioChangeEvent } from "antd";
-import { SyncOutlined, EyeOutlined } from "@ant-design/icons";
-import { Breadcrumb } from "antd";
-import { HomeOutlined } from "@ant-design/icons";
-import GridTable from "@components/common/Table/Table"; // Ensure GridTable is properly imported
+
+import Annotate from "./Annotate";
 import CustomerTable from "./CustomTable";
 import OrganizedTable from "./OrganizedTable";
-import Annotate from "./Annotate";
-import { RightSideBar } from "@components/layout/components";
-import { FilterOutlined } from "@ant-design/icons";
+
 type FormData = {
   name: string;
   cccd: string;
@@ -34,15 +42,17 @@ type FormData = {
   permanentAddress: string;
   currentAddress: string;
   taxCode: string;
+  employeeCode: string;
 };
 
 const { Option } = Select;
 
 const mockDataset = [
-  { name: "Thụy Khuê", cccd: "012345678" },
+  { name: "Thụy Khuê", cccd: "012345678", employeeCode: "123456" },
   {
     name: "Ngân hàng thương mại Cổ phần Việt Nam thịnh vượng",
-    cccd: "123456789"
+    cccd: "123456789",
+    employeeCode: "123456789"
   }
 ];
 
@@ -314,11 +324,11 @@ const fetchData = async () => {
   }
 };
 
-const CheckEmployee = () => {
+const CheckOldEmployee = () => {
   const [selectedRole, setSelectedRole] = useState("Support Team");
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isPersonalModalVisible, setIsPersonalModalVisible] = useState(false);
-  const [customerType, setCustomerType] = useState("Khách hàng cá nhân");
+  const [customerType, setCustomerType] = useState("");
   const [formData, setFormData] = useState<FormData>({
     name: "Thụy Khuê",
     cccd: "012345678",
@@ -331,7 +341,8 @@ const CheckEmployee = () => {
     email: "",
     permanentAddress: "",
     currentAddress: "",
-    taxCode: ""
+    taxCode: "",
+    employeeCode: "123456"
   });
   const tableRef = useRef<any>(null);
 
@@ -344,6 +355,7 @@ const CheckEmployee = () => {
   };
 
   const handleRoleChange = (e: RadioChangeEvent) => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     setSelectedRole(e.target.value);
   };
 
@@ -357,10 +369,10 @@ const CheckEmployee = () => {
   };
 
   const validateCustomer = () => {
-    const requiredFields: (keyof FormData)[] = ["name", "cccd"];
+    const requiredFields: Array<keyof FormData> = ["name", "cccd"];
 
     // Check if all required fields are filled
-    for (let field of requiredFields) {
+    for (const field of requiredFields) {
       if (!formData[field]) {
         message.error("[Lỗi] Thiếu thông tin bắt buộc!");
         return; // Stop if any required field is missing
@@ -419,6 +431,7 @@ const CheckEmployee = () => {
       render: (_: any, record: any) => (
         <EyeOutlined
           style={{ cursor: "pointer", fontSize: "20px" }}
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
           onClick={() => handleOpenModal(record.type)}
         />
       )
@@ -427,11 +440,17 @@ const CheckEmployee = () => {
       title: (
         <>
           Tỷ lệ vi phạm{" "}
-          <FilterOutlined style={{ marginLeft: 5, cursor: "pointer" }} />
+          <ArrowDownOutlined style={{ marginLeft: 5, cursor: "pointer" }} />
         </>
       ),
       dataIndex: "violationRate",
-      key: "violationRate"
+      key: "violationRate",
+      filterable: true,
+      className: "has-filter",
+      // Optional renderFilter logic if needed
+      renderFilter: () => (
+        <ArrowDownOutlined style={{ marginLeft: 5, cursor: "pointer" }} />
+      )
     },
     {
       title: (
@@ -440,7 +459,12 @@ const CheckEmployee = () => {
         </>
       ),
       dataIndex: "id",
-      key: "id"
+      key: "id",
+      filterable: true,
+      className: "has-filter",
+      renderFilter: ({ column, confirm, ref }: any) => (
+        <FilterInput column={column} confirm={confirm} ref={ref} />
+      )
     },
     {
       title: (
@@ -449,7 +473,12 @@ const CheckEmployee = () => {
         </>
       ),
       dataIndex: "type",
-      key: "type"
+      key: "type",
+      filterable: true,
+      className: "has-filter",
+      renderFilter: ({ column, confirm, ref }: any) => (
+        <FilterInput column={column} confirm={confirm} ref={ref} />
+      )
     },
     {
       title: (
@@ -459,6 +488,11 @@ const CheckEmployee = () => {
       ),
       dataIndex: "status",
       key: "status",
+      filterable: true,
+      className: "has-filter",
+      renderFilter: ({ column, confirm, ref }: any) => (
+        <FilterInput column={column} confirm={confirm} ref={ref} />
+      ),
       render: (status: string) => {
         let statusColor = "gray";
         if (status === "Active") statusColor = "green";
@@ -474,7 +508,12 @@ const CheckEmployee = () => {
         </>
       ),
       dataIndex: "gender",
-      key: "gender"
+      key: "gender",
+      filterable: true,
+      className: "has-filter",
+      renderFilter: ({ column, confirm, ref }: any) => (
+        <FilterInput column={column} confirm={confirm} ref={ref} />
+      )
     },
     {
       title: (
@@ -484,7 +523,12 @@ const CheckEmployee = () => {
         </>
       ),
       dataIndex: "primaryName",
-      key: "primaryName"
+      key: "primaryName",
+      filterable: true,
+      className: "has-filter",
+      renderFilter: ({ column, confirm, ref }: any) => (
+        <FilterInput column={column} confirm={confirm} ref={ref} />
+      )
     },
     {
       title: (
@@ -494,7 +538,12 @@ const CheckEmployee = () => {
         </>
       ),
       dataIndex: "dateOfBirth",
-      key: "dateOfBirth"
+      key: "dateOfBirth",
+      filterable: true,
+      className: "has-filter",
+      renderFilter: ({ column, confirm, ref }: any) => (
+        <FilterInput column={column} confirm={confirm} ref={ref} />
+      )
     },
     {
       title: (
@@ -504,14 +553,18 @@ const CheckEmployee = () => {
         </>
       ),
       dataIndex: "citizenship",
-      key: "citizenship"
+      key: "citizenship",
+      filterable: true,
+      className: "has-filter",
+      renderFilter: ({ column, confirm, ref }: any) => (
+        <FilterInput column={column} confirm={confirm} ref={ref} />
+      )
     }
   ];
 
   return (
     <div className="body relative w-full h-full">
       <div className="flex flex-row w-full h-full">
-        <div className="h-[calc(100%+250px)]"></div>
         <div className="dashboard-container">
           {/* Role Selector */}
           <div className="flex items-center justify-end mb-4">
@@ -535,16 +588,6 @@ const CheckEmployee = () => {
           <div className="flex items-center gap-4 mb-4">
             <div>
               <label className="block mb-1">
-                Tên Khách hàng <span className="text-red-500">*</span>
-              </label>
-              <Input
-                placeholder="Enter customer name"
-                value={formData.name}
-                onChange={(e) => handleInputChange("name", e.target.value)}
-              />
-            </div>
-            <div>
-              <label className="block mb-1">
                 Loại Khách hàng <span className="text-red-500">*</span>
               </label>
               <Select
@@ -556,6 +599,18 @@ const CheckEmployee = () => {
                 <Option value="Khách hàng tổ chức">Khách hàng tổ chức</Option>
               </Select>
             </div>
+            {customerType && (
+              <div>
+                <label className="block mb-1">
+                  Mã nhân viên <span className="text-red-500">*</span>
+                </label>
+                <Input
+                  placeholder="Enter employee code"
+                  value={formData.employeeCode}
+                  onChange={(e) => handleInputChange("name", e.target.value)}
+                />
+              </div>
+            )}
           </div>
 
           {/* Additional Fields */}
@@ -723,7 +778,7 @@ const CheckEmployee = () => {
             ]}
             width={1000}
           >
-            {customerType == "Khách hàng cá nhân" ? (
+            {customerType === "Khách hàng cá nhân" ? (
               <CustomerTable />
             ) : (
               <OrganizedTable />
@@ -738,4 +793,4 @@ const CheckEmployee = () => {
   );
 };
 
-export default CheckEmployee;
+export default CheckOldEmployee;
