@@ -20,6 +20,10 @@ const CustomFilterInput: React.FC<CustomFilterInputProps> = ({
     confirm();
   };
 
+  const handleConfirm = () => {
+    onChange(column, value);
+  };
+
   return (
     <div style={{ padding: 8 }}>
       <Input
@@ -28,6 +32,9 @@ const CustomFilterInput: React.FC<CustomFilterInputProps> = ({
         onChange={(e) => setValue(e.target.value)}
         style={{ width: 188, marginBottom: 8, display: "block" }}
       />
+      <Button type="primary" onClick={handleConfirm} size="small" style={{marginRight:'5px'}}>
+        Xác nhận
+      </Button>
       <Button type="primary" onClick={handleFilter} size="small">
         Lọc
       </Button>
