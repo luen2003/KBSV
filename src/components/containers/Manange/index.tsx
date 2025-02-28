@@ -368,7 +368,9 @@ const Manage: React.FC = () => {
       ),
       render: (fullName: string) => <span>{fullName}</span>,
       onHeaderCell: () => ({
-        onClick: () => handleSort("fullName")
+        onClick: () => handleSort("fullName"),
+        "data-column-key": "fullName" // Thêm data attribute
+
       })
     },
     {
@@ -389,7 +391,8 @@ const Manage: React.FC = () => {
         />
       ),
       onHeaderCell: () => ({
-        onClick: () => handleSort("gender")
+        onClick: () => handleSort("gender"),
+        "data-column-key": "gender" // Thêm data attribute
       })
     },
     {
@@ -409,7 +412,8 @@ const Manage: React.FC = () => {
         />
       ),
       onHeaderCell: () => ({
-        onClick: () => handleSort("idNumber")
+        onClick: () => handleSort("idNumber"),
+        "data-column-key": "idNumber" // Thêm data attribute
       }),
       render: (idNumber: string) => <span>{idNumber}</span>
     }
