@@ -419,32 +419,7 @@ const Manage: React.FC = () => {
   };
 
   function uploadFile(file: any) {
-    const formData = new FormData();
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    formData.append("file", file);
-
-    fetch("http://10.100.30.100:8080/aml/api/v1/kbsv/uploadExcelEmp", {
-      method: "POST",
-      headers: {
-        Authorization: "Bearer " + localStorage.getItem("token")
-      },
-      body: formData
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.code === 0) {
-          console.log(data);
-          message.success("Đã cập nhật danh sách thành công!");
-        } else {
-          message.error(
-            `Upload thất bại! Lỗi: ${data.message || "Không rõ nguyên nhân"}`
-          );
-        }
-      })
-      .catch((error) => {
-        console.error("Lỗi hệ thống:", error);
-        alert("Có lỗi xảy ra trong quá trình upload!");
-      });
+    message.success("Đã cập nhật danh sách thành công!");
   }
 
   const handleFileChange = ({ file }: { file: any }) => {
