@@ -159,11 +159,115 @@ const Manage: React.FC = () => {
       const url = `${baseUrl}/api/v1/kbsv`;
       const accessToken = localStorage.getItem("token");
 
-      const response = await axios.get(url, {
+      const response = {
+        data: {
+          code: 0,
+          errorCode: null,
+          transactionTime: 1740710206918,
+          category: null,
+          subCategory: null,
+          message: null,
+          value: {
+            totalRows: 5,
+            first: 0,
+            rows: 10,
+            items: [
+              {
+                id: "67a45aeeaa96a77cf24d728b",
+                employeeId: "111",
+                fullName: "Fisher Smitty Jennifer",
+                gender: "AAA",
+                idNumber: "AAA",
+                issueDate: "AAA",
+                placeOfIssue: "AAA",
+                phoneNumber: "AAA",
+                personalEmail: "AAA",
+                taxCode: "AAA"
+              },
+              {
+                id: "67a45aeeaa96a77cf24d728c",
+                employeeId: "222",
+                fullName: "BBB",
+                gender: "AAA",
+                idNumber: "AAA",
+                issueDate: "AAA",
+                placeOfIssue: "AAA",
+                phoneNumber: "AAA",
+                personalEmail: "AAA",
+                taxCode: "AAA"
+              },
+              {
+                id: "67b5b18b45dad83bb2a986a6",
+                employeeId: "XXXX",
+                fullName: "XXX",
+                gender: "Nam",
+                idNumber: "XXX",
+                issueDate: "11/11/2011",
+                placeOfIssue: "XXX",
+                phoneNumber: "XXX",
+                personalEmail: "XXX",
+                taxCode: "XXX"
+              },
+              {
+                id: "67b5b1bd45dad83bb2a986a7",
+                employeeId: "XXXX1",
+                fullName: "XXX",
+                gender: "Nam",
+                idNumber: "XXX",
+                issueDate: "11/11/2011",
+                placeOfIssue: "XXX",
+                phoneNumber: "XXX",
+                personalEmail: "XXX",
+                taxCode: "XXX"
+              },
+              {
+                id: "67b5b309ad3794088f0eeb48",
+                employeeId: "XXXX3",
+                fullName: "XXX",
+                gender: "Nam",
+                idNumber: "XXX",
+                issueDate: "11/11/2011",
+                placeOfIssue: "XXX",
+                phoneNumber: "XXX",
+                personalEmail: "XXX",
+                taxCode: "XXX"
+              }
+            ]
+          }
+        },
+        status: 200,
+        statusText: "",
         headers: {
-          Authorization: `Bearer ${accessToken}`
-        }
-      });
+          "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+          "content-type": "application/json",
+          expires: "0",
+          pragma: "no-cache"
+        },
+        config: {
+          transitional: {
+            silentJSONParsing: true,
+            forcedJSONParsing: true,
+            clarifyTimeoutError: false
+          },
+          adapter: ["xhr", "http", "fetch"],
+          transformRequest: [null],
+          transformResponse: [null],
+          timeout: 0,
+          xsrfCookieName: "XSRF-TOKEN",
+          xsrfHeaderName: "X-XSRF-TOKEN",
+          maxContentLength: -1,
+          maxBodyLength: -1,
+          env: {},
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            Authorization:
+              "Bearer eyJhbGciOiJSUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1BDUlQiLCJST0xFX1NQVCJdLCJzdWIiOiJ0ZXN0X2FtbCIsImlhdCI6MTc0MDcwOTkyNCwiZXhwIjoxNzQwNzI0MzI0fQ.bWWL0Ni9wviAI1FHeHs3bsJgw7I_6bGIwwMOMjUfvyuTjtrsZo_WyWFllsz5v4i_B8eN8ZPzuBv6_dJXp-2M9FhC37V1FV0wKF-jGBdxYNfBoWvNR7pz2BQzihaZfzAhiO5igJlzICVv_sJU4IGbptzHdcXGzUi_56A7J19eXRISHbCFKexyFMIHpxcs--QuMCEohch1VjgzC3x7wZDKbUGuUAiqMwLksKEtj6Lc2L1zztRaA3yFIZEXaqJEpm8aQPdeUUraL8fa9D942OgGiDqIQJhXPK8OPUV-6RNHwkhZmvQ2T9a2I7dI-3QqAYEAtDyFk0rQrr3iZg_AlAJGKg"
+          },
+          method: "get",
+          url: "http://10.100.30.100:8080/aml/api/v1/kbsv"
+        },
+        request: {}
+      };
 
       console.log("response", response);
       const { code, value } = response.data;
