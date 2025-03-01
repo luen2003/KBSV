@@ -115,7 +115,7 @@ const StepInput: React.FC<StepInputProps> = ({
       {suggestOptions && (
         <div
           className={clsx(
-            "absolute top-full left-0 right-0 grid grid-cols-3 gap-0.5 rounded overflow-auto bg-gray-004",
+            "absolute top-full left-0 right-0 grid grid-cols-3 gap-0.5 rounded overflow-hidden bg-gray-004",
             !openSuggest && "hidden"
           )}
         >

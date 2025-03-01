@@ -79,7 +79,7 @@ const ElMenu = ({
             as={Fragment}
           >
             <div>
-              <div className="bg-gray-008 flex flex-col py-2 overflow-auto">
+              <div className="bg-gray-008 flex flex-col py-2 overflow-hidden">
                 {data.children.map((child) => {
                   return (
                     <ItemMenu

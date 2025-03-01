@@ -89,7 +89,7 @@ export default function Modal({
                 <Dialog.Panel
                   className={clsx(
                     classNames?.classPanel,
-                    "w-full transform overflow-auto rounded-2xl text-left align-middle shadow-xl transition-all flex justify-center"
+                    "w-full transform overflow-hidden rounded-2xl text-left align-middle shadow-xl transition-all flex justify-center"
                   )}
                 >
                   <div className={classNames?.classWrap}>{children}</div>

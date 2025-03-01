@@ -471,3 +471,15 @@ label {
   max-height: 400px; /* Giới hạn chiều cao cho bảng */
   overflow-y: auto; /* Cho phép cuộn dọc */
 }
+
+@media (max-width: 768px) {
+  .dashboard-container{
+    width: 100vh;
+    overflow: auto;
+  }
+  .ant-table-cell{
+    width: 20vh;
+    overflow: auto;
+  }
+  
+}

@@ -22,7 +22,7 @@ export default function SlideBanner({ slides, timeChange }: SlideBannerProps) {
   }, [slides.length, timeChange]);
 
   return (
-    <div className="overflow-auto h-full relative">
+    <div className="overflow-hidden h-full relative">
       <div
         className={`flex h-full transition ease-out duration-40`}
         style={{

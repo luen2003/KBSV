@@ -100,7 +100,7 @@ const Login = () => {
   };
 
   return (
-    <div className="overflow-auto flex items-center h-full relative">
+    <div className="overflow-hidden flex items-center h-full relative">
       <div>
         <img src="/login/login.png" />
       </div>

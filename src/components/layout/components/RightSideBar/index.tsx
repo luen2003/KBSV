@@ -76,7 +76,7 @@ const RightSideBar = () => {
       <div
         className={clsx(
           "bg-gray-002 h-full relative flex flex-col",
-          !sidebar.isOpen ? "w-0" : "w-[33vh]"
+          !sidebar.isOpen ? "w-0" : "w-[33%+15vh]"
         )}
       >
         <div
