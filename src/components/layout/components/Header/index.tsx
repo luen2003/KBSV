@@ -18,7 +18,7 @@ export default function Header() {
   const breadcrumb = useAppSelector((state) => state.breadcrumb);
 
   return (
-    <div className="w-full py-1 pl-4 flex justify-between h-[48px]"
+    <div className="w-full py-1 pl-4 flex justify-between h-[48px] overflow-auto"
       style={{ background: "#FCFCFD" }}>
       {breadcrumb?.level1 ? (
         <div className="flex items-center">

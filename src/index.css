@@ -474,12 +474,13 @@ label {
 
 @media (max-width: 768px) {
   .dashboard-container{
-    width: 100vh;
+    width: calc(100%+200vh);
+    padding: 0;
     overflow: auto;
   }
   .ant-table-cell{
     width: 20vh;
     overflow: auto;
   }
-  
+
 }
