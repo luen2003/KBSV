@@ -6,7 +6,7 @@ const Card = (props: ICardProps) => {
       <div className="flex px-3 pt-1.5 pb-1.5 rounded-t-lg bg-color-brown2 min-h-32px text-start">
         {props?.title}
       </div>
-      <div className="border border-solid border-color-yellow20 rounded-b-lg overflow-hidden">
+      <div className="border border-solid border-color-yellow20 rounded-b-lg overflow-auto">
         {props?.children}
       </div>
     </div>

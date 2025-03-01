@@ -40,10 +40,10 @@ export default function TransactionTabs({ tabs }: { tabs: Data.ItemTab[] }) {
           </Tab>
         ))}
       </Tab.List>
-      <Tab.Panels className="h-full flex-1 outline-none overflow-hidden">
+      <Tab.Panels className="h-full flex-1 outline-none overflow-auto">
         {tabs.map((itemTab) => (
           <Tab.Panel
-            className="outline-none flex flex-col flex-1 h-full overflow-hidden"
+            className="outline-none flex flex-col flex-1 h-full overflow-auto"
             key={itemTab.id}
           >
             {itemTab.renderContent}

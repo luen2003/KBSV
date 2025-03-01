@@ -30,7 +30,7 @@ export default function SwitchButton({
         )}
       >
         {/* Switch Container */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-auto">
           {/* Switch */}
           <input
             type="checkbox"

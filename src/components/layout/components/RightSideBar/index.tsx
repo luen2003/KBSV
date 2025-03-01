@@ -117,7 +117,7 @@ const RightSideBar = () => {
           </div>
         ) : (
           <div
-            className="absolute top-2/3 left-0 z-10 w-5 h-10 bg-[#051E39] overflow-hidden rounded-r-[4px] cursor-pointer flex items-center justify-center"
+            className="absolute top-2/3 left-0 z-10 w-5 h-10 bg-[#051E39] overflow-auto rounded-r-[4px] cursor-pointer flex items-center justify-center"
             aria-hidden
             onClick={() => toggleSidebar(!sidebar.isOpen)}
           >

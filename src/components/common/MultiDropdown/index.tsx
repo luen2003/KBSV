@@ -129,7 +129,7 @@ const Content = ({
       >
         <Popover.Panel
           className={clsx(
-            "absolute left-0 z-10 mt-1 focus:outline-none w-full rounded overflow-hidden"
+            "absolute left-0 z-10 mt-1 focus:outline-none w-full rounded overflow-auto"
           )}
         >
           <div

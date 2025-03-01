@@ -31,7 +31,7 @@ export default function ModalCustom({
             <div
               className={clsx(
                 classPanel,
-                "relative overflow-hidden text-left shadow-xl transition-all"
+                "relative overflow-auto text-left shadow-xl transition-all"
               )}
             >
               {children}
