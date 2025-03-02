@@ -484,3 +484,6 @@ label {
   }
 
 }
+table, th, td {
+  width: calc(100%+200vh);
+}
