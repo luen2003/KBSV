@@ -190,7 +190,7 @@ class GridTable extends React.Component {
         align: "center",
         dataIndex: "base_index",
         key: "base_index",
-        width: 50,
+        width: 150,
         responsive: ["lg"]
       });
     }
