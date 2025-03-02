@@ -468,7 +468,7 @@ label {
 
 /* Cải thiện phần cuộn của table trong modal nếu có */
 .ant-table-body {
-  max-height: 400px; /* Giới hạn chiều cao cho bảng */
+  width: calc(100%+600px)!important; /* Giới hạn chiều cao cho bảng */
   overflow-y: auto; /* Cho phép cuộn dọc */
 }
 
@@ -479,12 +479,12 @@ label {
     overflow: auto;
   }
   .ant-table-cell{
-    width: 100%;
+    width: 100%!important;
   }
 
 }
 table, th, td {
-  width: 100%;
+  width: calc(100%+600px)!important;
 }
 th {
   overflow: auto;
