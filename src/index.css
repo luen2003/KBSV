@@ -485,6 +485,7 @@ label {
 }
 table, th, td {
   width: calc(100%+600px)!important;
+  overflow: hidden!important;
 }
 th {
   overflow: auto;
