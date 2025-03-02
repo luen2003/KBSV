@@ -479,11 +479,13 @@ label {
     overflow: auto;
   }
   .ant-table-cell{
-    width: 20vh;
-    overflow: auto;
+    width: 100%;
   }
 
 }
 table, th, td {
   width: calc(100%+200vh);
+}
+th {
+  overflow: auto;
 }
