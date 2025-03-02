@@ -490,3 +490,140 @@ table, th, td {
 th {
   overflow: auto;
 }
+
+@media (max-width: 768px) {
+  /* Giảm chiều rộng của các cột trong bảng trên mobile */
+  .ant-table-cell {
+    width: auto !important; /* Loại bỏ chiều rộng cố định */
+    padding: 8px !important; /* Điều chỉnh padding cho phù hợp */
+  }
+  
+  /* Điều chỉnh chiều rộng của các tiêu đề trong header */
+  .ant-table-thead th {
+    width: auto !important; /* Loại bỏ chiều rộng cố định */
+    text-align: left; /* Căn trái tiêu đề */
+  }
+
+  /* Thay đổi giao diện của bảng nếu cần */
+  .ant-table {
+    width: 100% !important; /* Đảm bảo bảng có chiều rộng 100% trên mobile */
+    overflow-x: auto; /* Thêm cuộn ngang nếu bảng vượt quá chiều rộng */
+    display: block; /* Giúp bảng có thể cuộn ngang nếu cần thiết */
+  }
+
+  /* Đảm bảo các ô bảng không bị ghi đè hoặc bị lỗi trên mobile */
+  .ant-table-cell {
+    word-wrap: break-word; /* Cho phép các từ dài bị ngắt dòng */
+    overflow: hidden; /* Ẩn các phần nội dung vượt ra ngoài */
+    text-overflow: ellipsis; /* Thêm dấu ba chấm nếu nội dung quá dài */
+  }
+
+  /* Điều chỉnh modal content để nó không bị lỗi kích thước */
+  .ant-modal-body {
+    max-height: 60vh; /* Thiết lập chiều cao tối đa */
+    overflow-y: auto; /* Cho phép cuộn dọc */
+  }
+
+  /* Giảm chiều rộng của modal nếu cần thiết */
+  .ant-modal-content {
+    width: 100vh !important; /* Đảm bảo modal không bị giới hạn quá nhiều */
+  }
+
+  /* Đảm bảo header của bảng hiển thị phù hợp trên mobile */
+  .ant-table-header {
+    display: block;
+    overflow-x: auto; /* Cho phép cuộn ngang nếu bảng bị quá rộng */
+  }
+
+  /* Tăng cường cải thiện sự hiển thị cho bảng */
+  .ant-table-tbody {
+    width: 100vh !important;
+  }
+
+  /* Thay đổi padding cho bảng */
+  .ant-table-tbody > tr > td {
+    padding: 4px !important;
+    width: 26vh !important;
+  }
+
+  
+  
+}
+
+@media (max-width: 768px) {
+  /* Đảm bảo form chiếm toàn bộ chiều rộng */
+  .flex-1 {
+    flex: 1;
+    width: 100%;
+  }
+
+  /* Đảm bảo hình ảnh không chiếm quá nhiều không gian */
+  .login-image {
+    display: none; /* Ẩn hình ảnh trên mobile để form chiếm không gian */
+  }
+
+  /* Làm cho form đăng nhập lớn hơn */
+   .login-form {
+    width: 100% !important; /* Chiếm toàn bộ chiều rộng trên màn hình nhỏ */
+    padding: 10px; /* Giảm padding cho phù hợp */
+  }
+
+  /* Điều chỉnh padding của các ô input */
+  .ant-table-cell {
+    padding: 10px !important;
+  }
+
+  /* Làm cho các ô input và button lớn hơn */
+  .ant-input,
+  .ant-select-selector,
+  .btn {
+    height: 48px; /* Tăng chiều cao của các input và button */
+    font-size: 16px; /* Tăng kích thước font cho dễ nhìn */
+  }
+
+  .btn {
+    font-size: 16px;
+  }
+
+  /* Đảm bảo các tiêu đề và form có khoảng cách hợp lý */
+  .pt-50px {
+    padding-top: 30px !important; /* Giảm padding trên cho form */
+  }
+
+  /* Làm cho tiêu đề form rõ ràng hơn */
+  h1 {
+    font-size: 30px; /* Tăng kích thước font cho tiêu đề */
+    margin-bottom: 20px; /* Thêm khoảng cách dưới tiêu đề */
+  }
+
+  /* Thay đổi layout của form */
+  .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Thêm margin cho các button và form */
+  .mt-16px {
+    margin-top: 20px;
+  }
+
+  /* Chỉnh sửa các phần tử khác như header, text */
+  .ant-table-cell {
+    width: auto;
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* Tăng cường khoảng cách cho "Or" và KBS SSO */
+  .mt-12px {
+    margin-top: 20px;
+  }
+
+  .mb-50px {
+    margin-bottom: 50px;
+  }
+}
+
