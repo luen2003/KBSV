@@ -204,6 +204,8 @@ textarea.ant-input {
 /* Chỉnh padding của modal */
 .ant-modal-content {
   padding: 16px 24px !important;
+  overflow-y: auto; /* Cho phép cuộn dọc */
+  overflow-x: auto;
 }
 
 .ant-table-column-title {
@@ -340,6 +342,8 @@ textarea.ant-input {
 /* Modal Styles */
 .ant-modal {
   border-radius: 8px;
+  overflow-y: auto; /* Cho phép cuộn dọc */
+  overflow-x: auto;
 }
 
 .ant-modal-header {
@@ -459,11 +463,13 @@ label {
 .ant-modal-body {
   max-height: 60vh; /* Thiết lập chiều cao tối đa */
   overflow-y: auto; /* Cho phép cuộn dọc */
+  overflow-x: auto;
 }
 
 /* Đảm bảo rằng modal luôn có chiều cao giới hạn */
 .ant-modal {
-  overflow: hidden; /* Ngăn không cho cuộn toàn bộ modal */
+  overflow-y: auto; /* Cho phép cuộn dọc */
+  overflow-x: auto;
 }
 
 /* Cải thiện phần cuộn của table trong modal nếu có */
@@ -522,11 +528,16 @@ th {
   .ant-modal-body {
     max-height: 60vh; /* Thiết lập chiều cao tối đa */
     overflow-y: auto; /* Cho phép cuộn dọc */
+    overflow-x: auto;
+
   }
 
   /* Giảm chiều rộng của modal nếu cần thiết */
   .ant-modal-content {
     width: 100vh !important; /* Đảm bảo modal không bị giới hạn quá nhiều */
+    overflow-y: auto; /* Cho phép cuộn dọc */
+    overflow-x: auto;
+
   }
 
   /* Đảm bảo header của bảng hiển thị phù hợp trên mobile */
